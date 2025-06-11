@@ -1,24 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
+import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import { usePortfolioJS } from './hooks/usePortfolioJS';
 import './App.css';
 
 function App() {
+  usePortfolioJS();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Preloader */}
+      <div id="preloader">
+        <div id="loader"></div>
+      </div>
+
+      <div className="s-pagewrap">
+        {/* Animated Circles */}
+        <div className="circles">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <Header />
+
+        <main className="s-content">
+          <Hero />
+          <About />
+          <Projects />
+          <Contact />
+        </main>
+
+        <Footer />
+      </div>
     </div>
   );
 }

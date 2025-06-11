@@ -1,0 +1,260 @@
+/* ===================================================================
+ * # GLOBAL STYLES - Mohamed Abidi Portfolio React
+ * ------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------- 
+ * ## colors
+ * ------------------------------------------------------------------- */
+:root {
+    /* color-1(#eabe7c) - Primary Gold
+     * color-2(#23967f) - Secondary Teal
+     */
+    --color-1 : hsla(36, 72%, 70%, 1);
+    --color-2 : hsla(168, 62%, 36%, 1);
+
+    /* theme color variations */
+    --color-1-lighter : hsla(36, 72%, 90%, 1);
+    --color-1-light   : hsla(36, 72%, 80%, 1);
+    --color-1-dark    : hsla(36, 72%, 60%, 1);
+    --color-1-darker  : hsla(36, 72%, 50%, 1);
+    --color-2-lighter : hsla(168, 62%, 56%, 1);
+    --color-2-light   : hsla(168, 62%, 46%, 1);
+    --color-2-dark    : hsla(168, 62%, 26%, 1);
+    --color-2-darker  : hsla(168, 62%, 16%, 1);
+
+    /* feedback colors */
+    --color-error           : hsla(359, 100%, 91%, 1);
+    --color-success         : hsla(76, 69%, 68%, 1);
+    --color-info            : hsla(205, 82%, 91%, 1);
+    --color-notice          : hsla(51, 100%, 80%, 1);
+    --color-error-content   : hsla(359, 50%, 50%, 1);
+    --color-success-content : hsla(76, 29%, 28%, 1);
+    --color-info-content    : hsla(205, 32%, 31%, 1);
+    --color-notice-content  : hsla(51, 30%, 30%, 1);
+
+    /* grayscale shades */
+    --color-black   : #000000;
+    --color-gray-19 : #020202;
+    --color-gray-18 : #040404;
+    --color-gray-17 : #060607;
+    --color-gray-16 : #080809;
+    --color-gray-15 : #0a0b0b;
+    --color-gray-14 : #0c0d0d;
+    --color-gray-13 : #0e0f0f;
+    --color-gray-12 : #101112;
+    --color-gray-11 : #121314;
+    --color-gray-10 : #141516;
+    --color-gray-9  : #2c2c2d;
+    --color-gray-8  : #434445;
+    --color-gray-7  : #5b5b5c;
+    --color-gray-6  : #727373;
+    --color-gray-5  : #8a8a8b;
+    --color-gray-4  : #a1a1a2;
+    --color-gray-3  : #b9b9b9;
+    --color-gray-2  : #d0d0d0;
+    --color-gray-1  : #e8e8e8;
+    --color-white   : #ffffff;
+
+    /* text colors */
+    --color-text        : var(--color-gray-4);
+    --color-text-dark   : var(--color-white);
+    --color-text-light  : var(--color-gray-7);
+    --color-placeholder : var(--color-gray-7);
+
+    /* button colors */
+    --color-btn                    : var(--color-gray-9);
+    --color-btn-text               : var(--color-1);
+    --color-btn-hover              : var(--color-white);
+    --color-btn-hover-text         : var(--color-black);
+    --color-btn-primary            : var(--color-1-dark);
+    --color-btn-primary-text       : var(--color-black);
+    --color-btn-primary-hover      : var(--color-1-darker);
+    --color-btn-primary-hover-text : var(--color-black);
+    --color-btn-stroke             : var(--color-white);
+    --color-btn-stroke-text        : var(--color-white);
+    --color-btn-stroke-hover       : var(--color-white);
+    --color-btn-stroke-hover-text  : var(--color-black);
+
+    /* other colors */
+    --color-body    : var(--color-gray-10);
+    --color-border  : rgba(255, 255, 255, .05);
+    --border-radius : 3px;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## spacing and typography
+ * ------------------------------------------------------------------- */
+:root {
+    /* fonts */
+    --font-1 : "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-2 : "JetBrains Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+
+    /* spacing - base font size: 19px, vertical space unit: 32px */
+    --base-size      : 62.5%;
+    --multiplier     : 1;
+    --base-font-size : calc(1.9rem * var(--multiplier));
+    --space          : calc(3.2rem * var(--multiplier));
+
+    /* vertical spacing */
+    --vspace-0_125 : calc(0.125 * var(--space));
+    --vspace-0_25  : calc(0.25 * var(--space));
+    --vspace-0_375 : calc(0.375 * var(--space));
+    --vspace-0_5   : calc(0.5 * var(--space));
+    --vspace-0_625 : calc(0.625 * var(--space));
+    --vspace-0_75  : calc(0.75 * var(--space));
+    --vspace-0_875 : calc(0.875 * var(--space));
+    --vspace-1     : var(--space);
+    --vspace-1_25  : calc(1.25 * var(--space));
+    --vspace-1_5   : calc(1.5 * var(--space));
+    --vspace-1_75  : calc(1.75 * var(--space));
+    --vspace-2     : calc(2 * var(--space));
+    --vspace-2_5   : calc(2.5 * var(--space));
+    --vspace-3     : calc(3 * var(--space));
+    --vspace-3_5   : calc(3.5 * var(--space));
+    --vspace-4     : calc(4 * var(--space));
+    --vspace-4_5   : calc(4.5 * var(--space));
+    --vspace-5     : calc(5 * var(--space));
+
+    /* type scale - ratio 1.2 */
+    --text-scale-ratio : 1.2;
+    --text-size        : var(--base-font-size);
+    --text-xs          : calc((var(--text-size) / var(--text-scale-ratio)) / var(--text-scale-ratio));
+    --text-sm          : calc(var(--text-xs) * var(--text-scale-ratio));
+    --text-md          : calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-lg          : calc(var(--text-md) * var(--text-scale-ratio));
+    --text-xl          : calc(var(--text-lg) * var(--text-scale-ratio));
+    --text-xxl         : calc(var(--text-xl) * var(--text-scale-ratio));
+    --text-xxxl        : calc(var(--text-xxl) * var(--text-scale-ratio));
+    --text-display-1   : calc(var(--text-xxxl) * var(--text-scale-ratio));
+    --text-display-2   : calc(var(--text-display-1) * var(--text-scale-ratio));
+    --text-display-3   : calc(var(--text-display-2) * var(--text-scale-ratio));
+
+    /* button height */
+    --vspace-btn : var(--vspace-2);
+}
+
+/* responsive adjustments */
+@media screen and (max-width: 600px) {
+    :root {
+        --multiplier : .875;
+    }
+}
+
+/* ------------------------------------------------------------------- 
+ * ## grid variables
+ * ------------------------------------------------------------------- */
+:root {
+    /* container widths */
+    --width-full     : 100%;
+    --width-max      : 1200px;
+    --width-wide     : 1400px;
+    --width-wider    : 1600px;
+    --width-widest   : 1800px;
+    --width-narrow   : 1000px;
+    --width-narrower : 800px;
+    --width-grid-max : var(--width-max);
+
+    /* gutter */
+    --gutter : 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+    :root {
+        --gutter : 1.6rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --gutter : 1rem;
+    }
+}
+
+/* ------------------------------------------------------------------- 
+ * ## base styles
+ * ------------------------------------------------------------------- */
+html {
+    font-size: var(--base-size);
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-1);
+    font-size: var(--base-font-size);
+    font-weight: 300;
+    line-height: var(--vspace-1);
+    color: var(--color-text);
+    background-color: var(--color-body);
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* reset margins and padding */
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+/* links */
+a {
+    color: var(--color-1);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+a:focus,
+a:hover,
+a:active {
+    color: var(--color-2);
+    outline: 0;
+}
+
+/* media */
+svg,
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* typography */
+p {
+    font-size: inherit;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-1);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--vspace-0_5);
+    color: var(--color-text-dark);
+}
+
+/* utility classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
