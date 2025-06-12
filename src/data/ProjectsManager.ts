@@ -1,3 +1,9 @@
+interface Skill {
+  name: string;
+  imageType?: 'link' | 'path' | 'fontawesome';
+  image?: string;
+}
+
 interface Project {
   id: string;
   title: string;
@@ -5,8 +11,10 @@ interface Project {
   longDescription: string;
   image: string;
   coverImage: string;
+  videoUrl?: string;
   category: string[];
   technologies: string[];
+  skills: Skill[];
   liveUrl?: string;
   githubUrl?: string;
   featured: boolean;
@@ -36,8 +44,18 @@ export class ProjectsManager {
         longDescription: 'HireUp is a recruitment and employment website built with a focus on user experience and efficient workflows. The platform facilitates both job seekers and recruiters to connect seamlessly. Features include advanced search functionality, user profiles, and job posting capabilities.',
         image: '/images/portfolio/hu.png',
         coverImage: '/images/portfolio/hireup_cover.png',
+        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         category: ['Recruitment and Employment', 'Web Development'],
         technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+        skills: [
+          { name: 'React', imageType: 'fontawesome', image: 'fab fa-react' },
+          { name: 'Node.js', imageType: 'fontawesome', image: 'fab fa-node-js' },
+          { name: 'MongoDB', imageType: 'path', image: '/images/skills/mongodb.png' },
+          { name: 'Express.js', imageType: 'path', image: '/images/skills/express.png' },
+          { name: 'JavaScript', imageType: 'fontawesome', image: 'fab fa-js-square' },
+          { name: 'HTML5', imageType: 'fontawesome', image: 'fab fa-html5' },
+          { name: 'CSS3', imageType: 'fontawesome', image: 'fab fa-css3-alt' }
+        ],
         githubUrl: 'https://github.com/HamaBTW/web-project-hireup-hama-git/tree/hama',
         featured: true
       },
@@ -48,8 +66,15 @@ export class ProjectsManager {
         longDescription: 'The World Within is an engaging game developed using SDL and C language. The game features an immersive storyline where players explore different worlds filled with puzzles and challenges. This project showcases expertise in game mechanics, design, and optimization using the SDL framework and C language.',
         image: '/images/portfolio/tww_logo.png',
         coverImage: '/images/portfolio/tww_cover.png',
+        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         category: ['Game Development', 'SDL', 'C Language'],
         technologies: ['SDL', 'C Language', 'Game Development'],
+        skills: [
+          { name: 'C Language', imageType: 'path', image: '/images/skills/c.png' },
+          { name: 'SDL', imageType: 'path', image: '/images/skills/sdl.png' },
+          { name: 'Game Development', imageType: 'fontawesome', image: 'fas fa-gamepad' },
+          { name: 'Graphics Programming', imageType: 'fontawesome', image: 'fas fa-paint-brush' }
+        ],
         liveUrl: 'https://kanm.netlify.app',
         featured: true
       },
@@ -60,8 +85,15 @@ export class ProjectsManager {
         longDescription: 'Spotipy is a powerful music tool that allows you to discover, download, and enjoy your favorite songs from Spotify. With an intuitive interface, Spotipy simplifies music collection management, letting users access their Spotify library offline.',
         image: '/images/portfolio/spotipy.png',
         coverImage: '/images/portfolio/spotipy_cover.png',
+        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         category: ['Desktop Application Development'],
         technologies: ['Desktop Application', 'Spotify API', 'Music Streaming'],
+        skills: [
+          { name: 'Python', imageType: 'fontawesome', image: 'fab fa-python' },
+          { name: 'Spotify API', imageType: 'fontawesome', image: 'fab fa-spotify' },
+          { name: 'Desktop Development', imageType: 'fontawesome', image: 'fas fa-desktop' },
+          { name: 'API Integration', imageType: 'fontawesome', image: 'fas fa-plug' }
+        ],
         liveUrl: 'https://spotipy-app.netlify.app',
         featured: true
       },
@@ -72,8 +104,15 @@ export class ProjectsManager {
         longDescription: 'Clothify simplifies the recycling process by connecting users with local recycling partners and providing valuable tips on extending the life of clothing. This desktop application promotes a sustainable future by fostering a community committed to reducing textile waste.',
         image: '/images/portfolio/clothify.png',
         coverImage: '/images/portfolio/clothify_cover.png',
+        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         category: ['Desktop Application Development'],
         technologies: ['Desktop Application', 'Sustainability', 'Recycling'],
+        skills: [
+          { name: 'Java', imageType: 'fontawesome', image: 'fab fa-java' },
+          { name: 'Desktop Development', imageType: 'fontawesome', image: 'fas fa-desktop' },
+          { name: 'UI/UX Design', imageType: 'fontawesome', image: 'fas fa-palette' },
+          { name: 'Sustainability', imageType: 'fontawesome', image: 'fas fa-leaf' }
+        ],
         liveUrl: 'https://clothify-app.netlify.app',
         featured: true
       },
@@ -84,8 +123,17 @@ export class ProjectsManager {
         longDescription: 'Tache-Lik is an innovative educational platform that I founded to guide and mentor students in their academic journey. The platform provides personalized learning paths, mentorship programs, and educational resources to help students achieve their goals.',
         image: '/images/portfolio/tache-lik.png',
         coverImage: '/images/portfolio/tache-lik.png',
+        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         category: ['Education', 'Mentorship'],
         technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+        skills: [
+          { name: 'React', imageType: 'fontawesome', image: 'fab fa-react' },
+          { name: 'Node.js', imageType: 'fontawesome', image: 'fab fa-node-js' },
+          { name: 'MongoDB', imageType: 'path', image: '/images/skills/mongodb.png' },
+          { name: 'Socket.io', imageType: 'path', image: '/images/skills/socketio.png' },
+          { name: 'JavaScript', imageType: 'fontawesome', image: 'fab fa-js-square' },
+          { name: 'Education Technology', imageType: 'fontawesome', image: 'fas fa-graduation-cap' }
+        ],
         liveUrl: 'https://www.tache-lik.tn',
         featured: true
       },
@@ -98,6 +146,11 @@ export class ProjectsManager {
         coverImage: '/images/portfolio/more_cover.png',
         category: ['GitHub Portfolio'],
         technologies: ['Various Technologies', 'Open Source', 'Innovation'],
+        skills: [
+          { name: 'GitHub', imageType: 'fontawesome', image: 'fab fa-github' },
+          { name: 'Open Source', imageType: 'fontawesome', image: 'fas fa-code-branch' },
+          { name: 'Innovation', imageType: 'fontawesome', image: 'fas fa-lightbulb' }
+        ],
         githubUrl: 'https://github.com/HamaBTW',
         featured: false
       }
@@ -168,5 +221,5 @@ export class ProjectsManager {
 // Export singleton instance
 export const projectsManager = ProjectsManager.getInstance();
 
-// Export the Project interface as a type
-export type { Project };
+// Export the interfaces as types
+export type { Project, Skill };

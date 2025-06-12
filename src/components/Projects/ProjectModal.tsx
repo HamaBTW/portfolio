@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Project } from '../../data/ProjectsManager';
+import { Project, Skill } from '../../data/ProjectsManager';
 
 interface ProjectModalProps {
   project: Project;
@@ -9,6 +9,36 @@ interface ProjectModalProps {
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+
+  const renderSkillIcon = (skill: Skill) => {
+    if (!skill.image) {
+      return <span className="skill-icon-placeholder">{skill.name.charAt(0)}</span>;
+    }
+
+    switch (skill.imageType) {
+      case 'fontawesome':
+        return <i className={skill.image} aria-hidden="true"></i>;
+      case 'link':
+      case 'path':
+        return <img src={skill.image} alt={skill.name} className="skill-icon-img" />;
+      default:
+        return <span className="skill-icon-placeholder">{skill.name.charAt(0)}</span>;
+    }
+  };
+
+  const getYouTubeEmbedUrl = (url: string) => {
+    if (!url) return null;
+
+    // Extract video ID from various YouTube URL formats
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+
+    if (match && match[2].length === 11) {
+      return `https://www.youtube.com/embed/${match[2]}`;
+    }
+
+    return null;
+  };
 
   useEffect(() => {
     // Trigger opening animation
@@ -92,21 +122,72 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
         >
           <h5>{project.title}</h5>
           <p>{project.longDescription}</p>
-          <ul className="modal-popup__cat">
-            {project.category.map((cat, index) => (
-              <li
-                key={index}
+
+          {project.videoUrl && getYouTubeEmbedUrl(project.videoUrl) && (
+            <div className="modal-popup__video">
+              <h6>Project Demo</h6>
+              <div
+                className="video-container"
                 style={{
-                  transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                   opacity: isVisible ? 1 : 0,
                   transition: 'all 0.3s ease-out',
-                  transitionDelay: isVisible ? `${0.4 + index * 0.1}s` : '0s',
+                  transitionDelay: isVisible ? '0.35s' : '0s',
                 }}
               >
-                {cat}
-              </li>
-            ))}
-          </ul>
+                <iframe
+                  src={getYouTubeEmbedUrl(project.videoUrl) || ''}
+                  title={`${project.title} Demo Video`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          )}
+
+          <div className="modal-popup__categories">
+            <h6>Categories</h6>
+            <ul className="modal-popup__cat">
+              {project.category.map((cat, index) => (
+                <li
+                  key={index}
+                  style={{
+                    transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
+                    opacity: isVisible ? 1 : 0,
+                    transition: 'all 0.3s ease-out',
+                    transitionDelay: isVisible ? `${0.4 + index * 0.1}s` : '0s',
+                  }}
+                >
+                  {cat}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {project.skills && project.skills.length > 0 && (
+            <div className="modal-popup__skills">
+              <h6>Skills & Technologies</h6>
+              <div className="skills-grid">
+                {project.skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="skill-item"
+                    style={{
+                      transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                      opacity: isVisible ? 1 : 0,
+                      transition: 'all 0.3s ease-out',
+                      transitionDelay: isVisible ? `${0.5 + index * 0.1}s` : '0s',
+                    }}
+                  >
+                    <div className="skill-icon">
+                      {renderSkillIcon(skill)}
+                    </div>
+                    <span className="skill-name">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         <a
