@@ -12,7 +12,7 @@ const Projects: React.FC<ProjectsProps> = () => {
   const [hasMore, setHasMore] = useState<boolean>(false);
   const [totalProjects, setTotalProjects] = useState<number>(0);
 
-  const projectsPerPage = 6;
+  const projectsPerPage = 5; // Show 5 projects + 1 button slot
 
   useEffect(() => {
     loadProjects();
@@ -95,40 +95,29 @@ const Projects: React.FC<ProjectsProps> = () => {
                 </a>
               </li>
             ))}
+
+            {/* Show More Button as 6th Grid Item */}
+            {hasMore && (
+              <li className="folio-list__item column folio-list__item--more" data-animate-el>
+                <button
+                  className="folio-list__more-btn"
+                  onClick={loadMoreProjects}
+                >
+                  <div className="folio-list__more-content">
+                    <div className="folio-list__more-icon">+</div>
+                    <div className="folio-list__more-title">More Projects</div>
+                    <div className="folio-list__more-count">{totalProjects - displayedProjects.length} remaining</div>
+                  </div>
+                </button>
+              </li>
+            )}
           </ul>
 
-          {/* Show More/Less Button */}
+          {/* Projects counter */}
           <div className="row" data-animate-el>
             <div className="column">
-              <div className="show-more-container">
-                {hasMore ? (
-                  <button
-                    className="btn btn--primary show-more-btn"
-                    onClick={loadMoreProjects}
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    Load More Projects ({totalProjects - displayedProjects.length} remaining)
-                  </button>
-                ) : (
-                  displayedProjects.length > projectsPerPage && (
-                    <button
-                      className="btn btn--stroke show-more-btn"
-                      onClick={showLessProjects}
-                    >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 15L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      Show Less Projects
-                    </button>
-                  )
-                )}
-
-                {/* Projects counter */}
-                <div className="projects-counter">
-                  Showing {displayedProjects.length} of {totalProjects} projects
-                </div>
+              <div className="projects-counter">
+                Showing {displayedProjects.length} of {totalProjects} projects
               </div>
             </div>
           </div>

@@ -298,42 +298,77 @@ ul.skills-list li:last-child:after {
   }
 }
 
-/* Show More Projects Button Styling */
-.show-more-container {
-  text-align: center;
-  margin-top: var(--vspace-2);
-  padding: var(--vspace-1_5) 0;
+/* Simple More Projects Button */
+.folio-list__item--more {
+  position: relative;
 }
 
-.show-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-radius: var(--border-radius);
-  transition: all 0.3s ease;
-  background: var(--color-1);
-  color: var(--color-white);
-  border: 2px solid var(--color-1);
-}
-
-.show-more-btn:hover {
+.folio-list__more-btn {
+  display: block;
+  width: 100%;
+  min-height: var(--vspace-4_5);
   background: transparent;
+  border: 2px dashed var(--color-gray-9);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.folio-list__more-btn:hover {
+  border-color: var(--color-1);
+}
+
+.folio-list__more-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.folio-list__more-icon {
+  font-size: 2rem;
+  color: var(--color-text-light);
+  transition: color 0.3s ease;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.folio-list__more-btn:hover .folio-list__more-icon {
   color: var(--color-1);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 94, 77, 0.3);
 }
 
-.show-more-btn svg {
-  transition: transform 0.3s ease;
+.folio-list__more-title {
+  font-family: var(--font-1);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  transition: color 0.3s ease;
+  margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
+  line-height: 1.3;
 }
 
-.show-more-btn:hover svg {
-  transform: translateY(2px);
+.folio-list__more-btn:hover .folio-list__more-title {
+  color: var(--color-1);
+}
+
+.folio-list__more-count {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  opacity: 0.7;
+  transition: color 0.3s ease;
+  margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
+  line-height: 1.3;
+}
+
+.folio-list__more-btn:hover .folio-list__more-count {
+  color: var(--color-1);
 }
 
 /* Projects counter styling */
@@ -363,58 +398,364 @@ ul.skills-list li:last-child:after {
   }
 }
 
-/* Scroll down element styling */
-.intro-scrolldown {
+/* ===================================================================
+ * # MODAL POPUP (Enhanced with Cool Animations)
+ * ------------------------------------------------------------------- */
+
+/* Lightbox overlay */
+.basicLightbox {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-body);
+  opacity: 0.01;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000;
+  will-change: opacity, transform;
+  backdrop-filter: blur(0px);
+}
+
+.basicLightbox--visible {
+  opacity: 1;
+  backdrop-filter: blur(5px);
+}
+
+.basicLightbox--closing {
+  opacity: 0;
+  backdrop-filter: blur(0px);
+}
+
+.basicLightbox::after {
+  content: "";
   position: absolute;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: var(--color-text-light);
-  text-decoration: none;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+  top: 1.8rem;
+  right: 1.8rem;
+  width: 2em;
+  height: 2em;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>');
+  background-position: center;
+  background-size: 1.8rem 1.8rem;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: 0.7;
   transition: all 0.3s ease;
+  border-radius: 50%;
+  transform: scale(1);
 }
 
-.intro-scrolldown:hover {
-  color: var(--color-1);
+.basicLightbox::after:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.scroll-text {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.scroll-icon {
-  display: block;
-  width: 1px;
-  height: 3rem;
-  background-color: currentColor;
-  margin: 0 auto;
+/* Modal popup content */
+.modal-popup {
+  max-width: 680px;
+  background-color: white;
+  font-size: calc(var(--text-size) * 0.9447);
+  line-height: var(--vspace-0_875);
+  color: rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
   position: relative;
-  animation: scrollIndicator 2s infinite;
+  border-radius: 12px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  will-change: transform, opacity;
+  max-height: 90vh;
 }
 
-.scroll-icon::after {
-  content: '';
+.modal-popup img {
+  margin-bottom: var(--vspace-0_75);
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  will-change: transform;
+}
+
+.modal-popup h5 {
+  font-family: var(--font-1);
+  font-size: var(--text-size);
+  line-height: var(--vspace-1);
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: var(--vspace-0_25);
+  color: black;
+}
+
+.modal-popup__desc {
+  padding: 0 var(--vspace-1_25) var(--vspace-0_25);
+}
+
+.modal-popup__cat {
+  list-style: none;
+  margin-left: 0;
+  font-size: var(--text-sm);
+  line-height: var(--vspace-0_5);
+  color: rgba(0, 0, 0, 0.6);
+  padding-left: calc(0.875 * var(--space));
+  position: relative;
+}
+
+.modal-popup__cat::before {
+  content: "";
+  display: block;
+  height: calc(0.625 * var(--space));
+  width: calc(0.625 * var(--space));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>');
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 6px solid currentColor;
+  left: 0;
+  top: -0.15em;
 }
 
-@keyframes scrollIndicator {
-  0%, 100% {
-    opacity: 1;
+.modal-popup__cat li {
+  display: inline;
+  padding-left: 0;
+}
+
+.modal-popup__cat li::after {
+  content: ", ";
+}
+
+.modal-popup__cat li:last-child::after {
+  display: none;
+}
+
+.modal-popup__details {
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: var(--text-xs);
+  line-height: var(--vspace-1_25);
+  color: white;
+  padding: 0 1.2rem;
+  position: absolute;
+  top: var(--vspace-1);
+  left: var(--vspace-1);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+  will-change: transform, background-color;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-popup__details:focus,
+.modal-popup__details:hover {
+  background-color: var(--color-body);
+  color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Additional animation keyframes for modal elements */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
   }
-  50% {
-    opacity: 0.3;
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
+
+@keyframes modalSlideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===================================================================
+ * # ENHANCED FONT SIZES - Making text MUCH BIGGER and more readable
+ * ------------------------------------------------------------------- */
+
+/* About Section - Much Bigger text */
+.s-about .text-pretitle {
+  font-size: 2rem !important;
+  letter-spacing: 0.3em !important;
+}
+
+.s-about .h1 {
+  font-size: 3.5rem !important;
+  line-height: 1.2 !important;
+}
+
+.s-about p {
+  font-size: 1.8rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Experience and Education Sections */
+.s-about .column h3 {
+  font-size: 2.4rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.s-about .column h5 {
+  font-size: 1.8rem !important;
+  margin-bottom: 0.8rem !important;
+}
+
+.s-about .column h6 {
+  font-size: 1.4rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.s-about .column p {
+  font-size: 1.6rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Testimonials Section */
+.testimonial-slider__slide p {
+  font-size: 2rem !important;
+  line-height: 1.5 !important;
+}
+
+.testimonial-slider__cite strong {
+  font-size: 1.6rem !important;
+}
+
+.testimonial-slider__cite span {
+  font-size: 1.4rem !important;
+}
+
+/* Contact Section */
+.s-contact .text-pretitle {
+  font-size: 2rem !important;
+  letter-spacing: 0.3em !important;
+}
+
+.s-contact .h1 {
+  font-size: 3.5rem !important;
+  line-height: 1.2 !important;
+}
+
+.contact-block h3 {
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.contact-links {
+  font-size: 1.8rem !important;
+  line-height: 1.5 !important;
+}
+
+.contact-social {
+  font-size: 1.8rem !important;
+  line-height: 1.5 !important;
+}
+
+.contact-btn {
+  font-size: 1.6rem !important;
+  padding: 1.2rem 2.4rem !important;
+}
+
+/* Footer */
+.s-footer .ss-copyright {
+  font-size: 1.4rem !important;
+  line-height: 1.4 !important;
+}
+
+/* Modal Content - Much Bigger text */
+.modal-popup {
+  font-size: 1.6rem !important;
+  line-height: 1.5 !important;
+}
+
+.modal-popup h5 {
+  font-size: 2.8rem !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1rem !important;
+}
+
+.modal-popup p {
+  font-size: 1.8rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.modal-popup__cat {
+  font-size: 1.4rem !important;
+  line-height: 1.3 !important;
+}
+
+.modal-popup__details {
+  font-size: 1.4rem !important;
+  padding: 1rem 1.8rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 800px) {
+  .s-about .h1 {
+    font-size: 2.8rem !important;
+  }
+
+  .s-about p {
+    font-size: 1.5rem !important;
+  }
+
+  .s-contact .h1 {
+    font-size: 2.8rem !important;
+  }
+
+  .testimonial-slider__slide p {
+    font-size: 1.6rem !important;
+  }
+
+  .contact-links {
+    font-size: 1.5rem !important;
+  }
+
+  .contact-social {
+    font-size: 1.5rem !important;
+  }
+
+  .modal-popup h5 {
+    font-size: 2.2rem !important;
+  }
+
+  .modal-popup p {
+    font-size: 1.5rem !important;
+  }
+}
+
+
