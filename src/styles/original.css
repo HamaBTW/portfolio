@@ -3802,7 +3802,7 @@ img.u-pull-left {
     font-weight    : 600;
     text-transform : uppercase;
     letter-spacing : 0.1em;
-    color          : rgba(0, 0, 0, 0.8);
+    color          : rgba(255, 255, 255, 0.9);
     margin-bottom  : var(--vspace-0_5);
     margin-top     : var(--vspace-1);
 }
@@ -3839,16 +3839,16 @@ img.u-pull-left {
     align-items     : center;
     text-align      : center;
     padding         : var(--vspace-0_5);
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius   : var(--border-radius);
     transition      : all 0.3s ease;
-    border          : 1px solid rgba(0, 0, 0, 0.1);
+    border          : 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skill-item:hover {
-    background-color : rgba(0, 0, 0, 0.05);
+    background-color : rgba(255, 255, 255, 0.1);
     transform        : translateY(-2px);
-    box-shadow       : 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow       : 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .skill-icon {
@@ -3888,7 +3888,7 @@ img.u-pull-left {
 .skill-name {
     font-size   : var(--text-xs);
     font-weight : 500;
-    color       : rgba(0, 0, 0, 0.8);
+    color       : rgba(255, 255, 255, 0.8);
     line-height : 1.2;
 }
 
