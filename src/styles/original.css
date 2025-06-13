@@ -3151,7 +3151,7 @@ img.u-pull-left {
     list-style       : none;
     display          : flex;
     font-size        : 1rem;
-    font-weight      : 400;
+    font-weight      : bold;
     text-transform   : uppercase;
     letter-spacing   : .3em;
     margin           : 0;
