@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Project, Skill } from '../../data/ProjectsManager';
+import './Modal.css';
 
 interface ProjectModalProps {
   project: Project;
@@ -101,15 +102,76 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
           transitionDelay: isVisible ? '0.1s' : '0s',
         }}
       >
-        <img
-          src={project.coverImage}
-          alt={`${project.title} Project Image`}
-          style={{
-            transform: isVisible ? 'scale(1)' : 'scale(1.1)',
-            transition: 'transform 0.4s ease-out',
-            transitionDelay: isVisible ? '0.2s' : '0s',
-          }}
-        />
+        <div className="modal-popup__image-container">
+          <img
+            src={project.coverImage}
+            alt={`${project.title} Project Image`}
+            style={{
+              transform: isVisible ? 'scale(1)' : 'scale(1.1)',
+              transition: 'transform 0.4s ease-out',
+              transitionDelay: isVisible ? '0.2s' : '0s',
+            }}
+          />
+
+          {/* Project Links Overlay on Image */}
+          <div
+            className="modal-popup__links modal-popup__links--overlay"
+            style={{
+              transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(-20px) scale(0.9)',
+              opacity: isVisible ? 1 : 0,
+              transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              transitionDelay: isVisible ? '0.4s' : '0s',
+            }}
+          >
+            {/* Live URL */}
+            {project.liveUrl && (
+              <a
+                className="modal-popup__details"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            )}
+
+            {/* Single GitHub URL */}
+            {project.githubUrl && !project.repositories && (
+              <a
+                className="modal-popup__details"
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Code
+              </a>
+            )}
+
+            {/* Multiple Repositories */}
+            {project.repositories && project.repositories.map((repo, index) => (
+              <a
+                key={index}
+                className="modal-popup__details"
+                href={repo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={repo.description}
+              >
+                {repo.name}
+              </a>
+            ))}
+
+            {/* Fallback if no links */}
+            {!project.liveUrl && !project.githubUrl && !project.repositories && (
+              <span
+                className="modal-popup__details"
+                style={{ opacity: 0.5, cursor: 'not-allowed' }}
+              >
+                No links available
+              </span>
+            )}
+          </div>
+        </div>
 
         <div
           className="modal-popup__desc"
@@ -122,6 +184,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
         >
           <h5>{project.title}</h5>
           <p>{project.longDescription}</p>
+
+
 
           {project.videoUrl && getYouTubeEmbedUrl(project.videoUrl) && (
             <div className="modal-popup__video">
@@ -189,26 +253,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             </div>
           )}
         </div>
-
-        <a
-          className="modal-popup__details"
-          href={project.liveUrl || project.githubUrl || '#0'}
-          target={project.liveUrl || project.githubUrl ? '_blank' : '_self'}
-          rel={project.liveUrl || project.githubUrl ? 'noopener noreferrer' : undefined}
-          onClick={(e) => {
-            if (!project.liveUrl && !project.githubUrl) {
-              e.preventDefault();
-            }
-          }}
-          style={{
-            transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.9)',
-            opacity: isVisible ? 1 : 0,
-            transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-            transitionDelay: isVisible ? '0.5s' : '0s',
-          }}
-        >
-          Project link
-        </a>
       </div>
     </div>
   );

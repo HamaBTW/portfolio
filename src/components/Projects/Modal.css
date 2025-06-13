@@ -1,0 +1,190 @@
+/* Modal Repository Links Custom Styles */
+
+/* Image Container */
+.modal-popup__image-container {
+  position: relative !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.modal-popup__image-container img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Links Overlay on Image */
+.modal-popup__links--overlay {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+  z-index: 10 !important;
+}
+
+/* Regular Links (fallback) */
+.modal-popup__links {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.5rem !important;
+  padding: 0 1.5rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Overlay buttons on image */
+.modal-popup__links--overlay a {
+  display: inline-block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0.75rem 1rem !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: var(--color-1) !important;
+  text-decoration: none !important;
+  border-radius: var(--border-radius) !important;
+  font-size: var(--text-sm) !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid var(--color-1) !important;
+  white-space: nowrap !important;
+  min-width: auto !important;
+  width: auto !important;
+  flex-shrink: 0 !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.modal-popup__links--overlay a:hover,
+.modal-popup__links--overlay a:focus {
+  background-color: var(--color-1) !important;
+  color: var(--color-body) !important;
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 6px 20px rgba(234, 190, 124, 0.4) !important;
+  border-color: var(--color-1) !important;
+}
+
+/* Regular links */
+.modal-popup__links a {
+  display: inline-block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0.75rem 1.25rem !important;
+  background-color: var(--color-1) !important;
+  color: var(--color-body) !important;
+  text-decoration: none !important;
+  border-radius: var(--border-radius) !important;
+  font-size: var(--text-sm) !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid transparent !important;
+  white-space: nowrap !important;
+  min-width: auto !important;
+  width: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.modal-popup__links a:hover,
+.modal-popup__links a:focus {
+  background-color: var(--color-1-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(234, 190, 124, 0.3) !important;
+  border-color: var(--color-1) !important;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 800px) {
+  .modal-popup__links--overlay {
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+    gap: 0.25rem !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    max-width: calc(100% - 1rem) !important;
+    justify-content: flex-end !important;
+  }
+
+  .modal-popup__links--overlay a {
+    padding: 0.25rem 0.4rem !important;
+    font-size: 0.65rem !important;
+    font-weight: 500 !important;
+    min-width: auto !important;
+    flex: 0 0 auto !important;
+    max-width: 45% !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+  }
+
+  .modal-popup__links {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    padding: 0 1rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .modal-popup__links a {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 1rem 1.5rem !important;
+    font-size: var(--text-base) !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal-popup__links--overlay {
+    top: 0.25rem !important;
+    right: 0.25rem !important;
+    gap: 0.15rem !important;
+  }
+
+  .modal-popup__links--overlay a {
+    padding: 0.15rem 0.25rem !important;
+    font-size: 0.55rem !important;
+    border-radius: 0.2rem !important;
+    max-width: 40% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .modal-popup__links {
+    padding: 0 0.75rem !important;
+  }
+
+  .modal-popup__links a {
+    padding: 0.875rem 1.25rem !important;
+    font-size: var(--text-sm) !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-popup__links--overlay {
+    top: 0.2rem !important;
+    right: 0.2rem !important;
+    gap: 0.1rem !important;
+  }
+
+  .modal-popup__links--overlay a {
+    padding: 0.1rem 0.2rem !important;
+    font-size: 0.5rem !important;
+    font-weight: 400 !important;
+    max-width: 35% !important;
+    border-radius: 0.15rem !important;
+  }
+}
+
+/* Override any conflicting styles */
+.modal-popup__links * {
+  box-sizing: border-box !important;
+}
+
+/* Ensure proper spacing from content above */
+.modal-popup__cat + .modal-popup__links,
+.modal-popup__desc + .modal-popup__links {
+  margin-top: 1.5rem !important;
+}

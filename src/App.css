@@ -643,30 +643,7 @@ ul.skills-list li:last-child:after {
   border-color: var(--color-1);
 }
 
-/* Mobile modal details button */
-@media screen and (max-width: 800px) {
-  .modal-popup__details {
-    position: static;
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin: var(--vspace-1) 0 0 0;
-    padding: var(--vspace-0_75) var(--vspace-1);
-    font-size: var(--text-sm);
-    border-radius: var(--border-radius);
-    background-color: var(--color-1);
-    color: var(--color-body);
-    border: none;
-    backdrop-filter: none;
-  }
-
-  .modal-popup__details:focus,
-  .modal-popup__details:hover {
-    background-color: var(--color-1-dark);
-    transform: none;
-    box-shadow: 0 4px 12px rgba(234, 190, 124, 0.3);
-  }
-}
+/* Modal links styles moved to Modal.css */
 
 @media screen and (max-width: 600px) {
   .modal-popup__details {
