@@ -69,6 +69,38 @@ export class ProjectsManager {
         liveUrl: 'https://www.tache-lik.tn',
         featured: true
       },
+      // EcoNet
+      {
+        id: 'econet',
+        title: 'EcoNet',
+        description: 'Comprehensive ecological platform with web and desktop applications for environmental management.',
+        longDescription: 'EcoNet is a comprehensive ecological platform that empowers businesses, organizations, and individuals to track, analyze, and optimize their environmental impact. Features both a Symfony web application and JavaFX desktop companion with AI integration, community forums, marketplace, donation system, face recognition authentication, and advanced analytics for sustainable resource management.',
+        image: '/images/portfolio/econet.png',
+        coverImage: '/images/portfolio/econet_cover.png',
+        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        category: ['Environmental Technology', 'Full-Stack Development', 'AI Integration'],
+        technologies: ['Symfony', 'JavaFX', 'MySQL', 'AI/ML', 'OAuth2', 'Face Recognition'],
+        skills: [
+          { name: 'Symfony', imageType: 'path', image: '/images/icons/symfony.svg' },
+          { name: 'PHP', imageType: 'fontawesome', image: 'fab fa-php' },
+          { name: 'JavaFX', imageType: 'path', image: '/images/icons/javafx.svg' },
+          { name: 'Java', imageType: 'fontawesome', image: 'fab fa-java' },
+          { name: 'MySQL', imageType: 'path', image: '/images/icons/mysql.svg' },
+          { name: 'Twig', imageType: 'path', image: '/images/icons/twig.svg' },
+          { name: 'Bootstrap', imageType: 'fontawesome', image: 'fab fa-bootstrap' },
+          { name: 'JavaScript', imageType: 'fontawesome', image: 'fab fa-js-square' },
+          { name: 'Google AI', imageType: 'path', image: '/images/icons/google-ai.svg' },
+          { name: 'OpenCV', imageType: 'path', image: '/images/icons/opencv.svg' },
+          { name: 'OAuth2', imageType: 'fontawesome', image: 'fas fa-key' },
+          { name: 'Face Recognition', imageType: 'fontawesome', image: 'fas fa-user-check' },
+          { name: 'WebSocket', imageType: 'fontawesome', image: 'fas fa-plug' },
+          { name: 'PDF Generation', imageType: 'fontawesome', image: 'fas fa-file-pdf' },
+          { name: 'QR Code', imageType: 'fontawesome', image: 'fas fa-qrcode' },
+          { name: 'Voice Recognition', imageType: 'fontawesome', image: 'fas fa-microphone' }
+        ],
+        liveUrl: 'https://econet-platform.com',
+        featured: true
+      },
       // HireUp
       {
         id: 'hireup',
