@@ -58,10 +58,10 @@ const Contact: React.FC<ContactProps> = () => {
         <div className="column lg-4 md-5 tab-6 stack-on-550 contact-block">
           <h3 className="text-pretitle">Find Me Online</h3>
           <ul className="contact-social">
-            <li><a href="https://www.linkedin.com/in/med-abidi/">LinkedIn</a></li>
-            <li><a href="https://github.com/HamaBTW">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/med-abidi/">Facebook</a></li>
-            <li><a href="https://www.tache-lik.tn">TacheLik</a></li>
+            <li><a href="https://www.linkedin.com/in/med-abidi/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/HamaBTW" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.facebook.com/Hama.BTW" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.tache-lik.tn" target="_blank" rel="noopener noreferrer">TacheLik</a></li>
           </ul>
         </div>
         <div className="column lg-4 md-12 contact-block">
