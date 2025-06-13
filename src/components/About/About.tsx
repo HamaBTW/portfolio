@@ -23,7 +23,7 @@ const About: React.FC<AboutProps> = () => {
               About
             </h2>
             <p className="attention-getter" data-animate-el>
-              I am Mohamed Abidi, a passionate mentor and founder of Tache-Lik. Currently, I am an engineering student with a strong interest in computer science, web development, and Arduino programming. I enjoy solving complex problems and helping others learn through my educational platform. I am committed to continuous growth and innovation in the tech field.
+              {personalInfo.description}
             </p>
             <a href="#0" className="btn btn--medium u-fullwidth" data-animate-el>Download CV</a>
           </div>
@@ -34,12 +34,11 @@ const About: React.FC<AboutProps> = () => {
         <div className="column lg-12">
           <h2 className="text-pretitle" data-animate-el>Expertise</h2>
           <ul className="skills-list h1" data-animate-el>
-            <li>Python</li>
-            <li>Node.js</li>
-            <li>React.js</li>
-            <li>C++</li>
-            <li>Arduino Programming</li>
-            <li>Web Development</li>
+            {personalInfo.skills
+              .slice(0, 6) // Limit to 6 skills for display
+              .map((skill, index) => (
+                <li key={index}>{skill.name}</li>
+              ))}
           </ul>
         </div>
       </div>
@@ -50,17 +49,19 @@ const About: React.FC<AboutProps> = () => {
             Experience
           </h2>
 
-          <div className="timeline__block" data-animate-el>
-            <div className="timeline__bullet"></div>
-            <div className="timeline__header">
-              <h4 className="timeline__title">Tache-Lik</h4>
-              <h5 className="timeline__meta">Founder</h5>
-              <p className="timeline__timeframe">Sep 2024 - Present</p>
+          {personalInfo.experience.map((exp, index) => (
+            <div key={index} className="timeline__block" data-animate-el>
+              <div className="timeline__bullet"></div>
+              <div className="timeline__header">
+                <h4 className="timeline__title">{exp.company}</h4>
+                <h5 className="timeline__meta">{exp.title}</h5>
+                <p className="timeline__timeframe">{exp.startDate} - {exp.endDate}</p>
+              </div>
+              <div className="timeline__desc">
+                <p>{exp.description}</p>
+              </div>
             </div>
-            <div className="timeline__desc">
-              <p>Founded Tache-Lik, an innovative educational platform empowering ESPRIT students by providing expert guidance, resources, and mentoring. Spearheading the development of tailored content and fostering student success in software development, web, and game development.</p>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="column lg-6 tab-12">
@@ -68,17 +69,19 @@ const About: React.FC<AboutProps> = () => {
             Education
           </h2>
 
-          <div className="timeline__block" data-animate-el>
-            <div className="timeline__bullet"></div>
-            <div className="timeline__header">
-              <h4 className="timeline__title">ESPRIT</h4>
-              <h5 className="timeline__meta">Engineering Student</h5>
-              <p className="timeline__timeframe">2021 - 2024</p>
+          {personalInfo.education.map((edu, index) => (
+            <div key={index} className="timeline__block" data-animate-el>
+              <div className="timeline__bullet"></div>
+              <div className="timeline__header">
+                <h4 className="timeline__title">{edu.institution}</h4>
+                <h5 className="timeline__meta">{edu.degree}</h5>
+                <p className="timeline__timeframe">{edu.startDate} - {edu.endDate}</p>
+              </div>
+              <div className="timeline__desc">
+                <p>{edu.description}</p>
+              </div>
             </div>
-            <div className="timeline__desc">
-              <p>Pursuing an engineering degree with a focus on computer science and software development. Actively engaged in various projects and learning opportunities that enhance my technical skills and knowledge in the field.</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ export interface PersonalInfo {
   subtitle: string;
   description: string;
   email: string;
+  phone?: string;
   location: string;
   avatar: string;
   aboutImage: string;
@@ -22,7 +23,6 @@ export interface SocialLink {
 export interface Skill {
   name: string;
   category: string;
-  level: number; // 1-5
 }
 
 export interface Experience {
@@ -49,7 +49,8 @@ export const personalInfo: PersonalInfo = {
   title: "Mentor and Founder of Tache-Lik",
   subtitle: "Engineering Student & Computer Science Enthusiast",
   description: "I am Mohamed Abidi, an engineering student with an unyielding passion for solving complex problems and building impactful solutions. My academic journey and professional projects revolve around my core strengths in computer science, web development, and Arduino programming.",
-  email: "contact@mohamed-abidi.com",
+  email: "abidi.mohamed.business@gmail.com",
+  phone: "+216 93 213 636",
   location: "Tunisia",
   avatar: "/images/portfolio/ma.png",
   aboutImage: "/images/portfolio/ma_about2.png",
@@ -64,7 +65,7 @@ export const personalInfo: PersonalInfo = {
     },
     {
       name: "Facebook",
-      url: "https://www.linkedin.com/in/med-abidi/"
+      url: "https://www.facebook.com/Hama.BTW"
     },
     {
       name: "TacheLik",
@@ -73,29 +74,29 @@ export const personalInfo: PersonalInfo = {
   ],
   skills: [
     // Programming Languages
-    { name: "JavaScript", category: "Programming", level: 5 },
-    { name: "TypeScript", category: "Programming", level: 4 },
-    { name: "Python", category: "Programming", level: 4 },
-    { name: "Java", category: "Programming", level: 3 },
-    { name: "C++", category: "Programming", level: 3 },
+    { name: "JavaScript", category: "Programming" },
+    { name: "TypeScript", category: "Programming" },
+    { name: "Python", category: "Programming" },
+    { name: "Java", category: "Programming" },
+    { name: "C++", category: "Programming" },
 
     // Web Development
-    { name: "React", category: "Frontend", level: 5 },
-    { name: "Node.js", category: "Backend", level: 4 },
-    { name: "Express.js", category: "Backend", level: 4 },
-    { name: "HTML/CSS", category: "Frontend", level: 5 },
-    { name: "Next.js", category: "Frontend", level: 4 },
+    { name: "React", category: "Frontend" },
+    { name: "Node.js", category: "Backend" },
+    { name: "Express.js", category: "Backend" },
+    { name: "HTML/CSS", category: "Frontend" },
+    { name: "Next.js", category: "Frontend" },
 
     // Databases
-    { name: "MongoDB", category: "Database", level: 4 },
-    { name: "PostgreSQL", category: "Database", level: 3 },
-    { name: "Firebase", category: "Database", level: 4 },
+    { name: "MongoDB", category: "Database" },
+    { name: "PostgreSQL", category: "Database" },
+    { name: "Firebase", category: "Database" },
 
     // Tools & Technologies
-    { name: "Git", category: "Tools", level: 4 },
-    { name: "Docker", category: "Tools", level: 3 },
-    { name: "Arduino", category: "Hardware", level: 4 },
-    { name: "IoT", category: "Hardware", level: 4 }
+    { name: "Git", category: "Tools" },
+    { name: "Docker", category: "Tools" },
+    { name: "Arduino", category: "Hardware" },
+    { name: "IoT", category: "Hardware" }
   ],
   experience: [
     {

@@ -14,8 +14,8 @@ const Footer: React.FC<FooterProps> = () => {
     <footer className="s-footer">
       <div className="row">
         <div className="column ss-copyright">
-          <span>© Copyright Mohamed Abidi 2025</span>
-          <span>Portfolio designed and developed by <a href="https://www.linkedin.com/in/med-abidi/">Mohamed Abidi</a>. Check out my work on <a href="https://github.com/HamaBTW">GitHub</a>.</span>
+          <span>© Copyright {personalInfo.name} {currentYear}</span>
+          <span>Portfolio designed and developed by <a href={personalInfo.socialLinks.find(link => link.name === 'LinkedIn')?.url}>{personalInfo.name}</a>. Check out my work on <a href={personalInfo.socialLinks.find(link => link.name === 'GitHub')?.url}>GitHub</a>.</span>
         </div>
 
         <div className="ss-go-top">

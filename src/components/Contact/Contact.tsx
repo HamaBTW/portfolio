@@ -51,21 +51,26 @@ const Contact: React.FC<ContactProps> = () => {
         <div className="column lg-3 md-5 tab-6 stack-on-550 contact-block">
           <h3 className="text-pretitle">Get in Touch</h3>
           <p className="contact-links">
-            <a href="mailto:abidi.mohamed.business@gmail.com" className="mailtoui">abidi.mohamed.business</a> <br />
-            <a href="tel:+21693213636">+216 93 213 636</a>
+            <a href={`mailto:${personalInfo.email}`} className="mailtoui">{personalInfo.email}</a> <br />
+            {personalInfo.phone && (
+              <a href={`tel:${personalInfo.phone.replace(/\s/g, '')}`}>{personalInfo.phone}</a>
+            )}
           </p>
         </div>
         <div className="column lg-4 md-5 tab-6 stack-on-550 contact-block">
           <h3 className="text-pretitle">Find Me Online</h3>
           <ul className="contact-social">
-            <li><a href="https://www.linkedin.com/in/med-abidi/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="https://github.com/HamaBTW" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://www.facebook.com/Hama.BTW" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-            <li><a href="https://www.tache-lik.tn" target="_blank" rel="noopener noreferrer">TacheLik</a></li>
+            {personalInfo.socialLinks.map((link, index) => (
+              <li key={index}>
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="column lg-4 md-12 contact-block">
-          <a href="mailto:abidi.mohamed.business@gmail.com" className="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello</a>
+          <a href={`mailto:${personalInfo.email}`} className="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello</a>
         </div>
       </div>
     </section>
