@@ -37,6 +37,39 @@ export class ProjectsManager {
 
   private initializeProjects(): void {
     this.projects = [
+      // Tache-Lik
+      {
+        id: 'tache-lik',
+        title: 'Tache-Lik',
+        description: 'Educational platform dedicated to guiding and mentoring students.',
+        longDescription: 'Tache-Lik is an innovative educational platform that I founded to guide and mentor students in their academic journey. The platform provides personalized learning paths, mentorship programs, and educational resources with real-time features, AI integration, and comprehensive video learning capabilities.',
+        image: '/images/portfolio/tache-lik.png',
+        coverImage: '/images/portfolio/tache-lik-cover.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        category: ['Education Technology', 'Full-Stack Development', 'Real-time Applications'],
+        technologies: ['React 18', 'TypeScript', 'Node.js', 'MySQL', 'Socket.io', 'Express.js', 'JWT', 'Docker'],
+        skills: [
+          { name: 'React', imageType: 'fontawesome', image: 'fab fa-react' },
+          { name: 'TypeScript', imageType: 'path', image: '/images/icons/ts.svg' },
+          { name: 'Node.js', imageType: 'fontawesome', image: 'fab fa-node-js' },
+          { name: 'MySQL', imageType: 'path', image: '/images/icons/mySql.svg' },
+          { name: 'Socket.io', imageType: 'path', image: '/images/icons/Socket.io.svg' },
+          { name: 'Express.js', imageType: 'path', image: '/images/icons/Express.js.svg' },
+          { name: 'JWT', imageType: 'path', image: '/images/icons/jwt.svg' },
+          { name: 'Docker', imageType: 'fontawesome', image: 'fab fa-docker' },
+          { name: 'Bootstrap', imageType: 'fontawesome', image: 'fab fa-bootstrap' },
+          { name: 'SASS', imageType: 'fontawesome', image: 'fab fa-sass' },
+          { name: 'Video.js', imageType: 'path', image: '/images/icons/video.js.svg' },
+          { name: 'Google AI', imageType: 'path', image: '/images/icons/google-ai.svg' },
+          { name: 'i18next', imageType: 'path', image: '/images/icons/i18next.svg' },
+          { name: 'Webpack', imageType: 'path', image: '/images/icons/jsWebpack.svg' },
+          { name: 'Jest', imageType: 'path', image: '/images/icons/jest.svg' },
+          { name: 'GitHub Actions', imageType: 'fontawesome', image: 'fab fa-github' }
+        ],
+        liveUrl: 'https://www.tache-lik.tn',
+        featured: true
+      },
+      // HireUp
       {
         id: 'hireup',
         title: 'HireUp',
@@ -59,44 +92,7 @@ export class ProjectsManager {
         githubUrl: 'https://github.com/HamaBTW/web-project-hireup-hama-git/tree/hama',
         featured: true
       },
-      {
-        id: 'tww',
-        title: 'The World Within',
-        description: 'An engaging game developed using SDL and C language.',
-        longDescription: 'The World Within is an engaging game developed using SDL and C language. The game features an immersive storyline where players explore different worlds filled with puzzles and challenges. This project showcases expertise in game mechanics, design, and optimization using the SDL framework and C language.',
-        image: '/images/portfolio/tww_logo.png',
-        coverImage: '/images/portfolio/tww_cover.png',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        category: ['Game Development', 'SDL', 'C Language'],
-        technologies: ['SDL', 'C Language', 'Game Development'],
-        skills: [
-          { name: 'C Language', imageType: 'path', image: '/images/skills/c.png' },
-          { name: 'SDL', imageType: 'path', image: '/images/skills/sdl.png' },
-          { name: 'Game Development', imageType: 'fontawesome', image: 'fas fa-gamepad' },
-          { name: 'Graphics Programming', imageType: 'fontawesome', image: 'fas fa-paint-brush' }
-        ],
-        liveUrl: 'https://kanm.netlify.app',
-        featured: true
-      },
-      {
-        id: 'spotipy',
-        title: 'Spotipy',
-        description: 'A powerful music tool that allows you to discover, download, and enjoy your favorite songs from Spotify.',
-        longDescription: 'Spotipy is a powerful music tool that allows you to discover, download, and enjoy your favorite songs from Spotify. With an intuitive interface, Spotipy simplifies music collection management, letting users access their Spotify library offline.',
-        image: '/images/portfolio/spotipy.png',
-        coverImage: '/images/portfolio/spotipy_cover.png',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        category: ['Desktop Application Development'],
-        technologies: ['Desktop Application', 'Spotify API', 'Music Streaming'],
-        skills: [
-          { name: 'Python', imageType: 'fontawesome', image: 'fab fa-python' },
-          { name: 'Spotify API', imageType: 'fontawesome', image: 'fab fa-spotify' },
-          { name: 'Desktop Development', imageType: 'fontawesome', image: 'fas fa-desktop' },
-          { name: 'API Integration', imageType: 'fontawesome', image: 'fas fa-plug' }
-        ],
-        liveUrl: 'https://spotipy-app.netlify.app',
-        featured: true
-      },
+      // Clothify
       {
         id: 'clothify',
         title: 'Clothify',
@@ -116,27 +112,47 @@ export class ProjectsManager {
         liveUrl: 'https://clothify-app.netlify.app',
         featured: true
       },
+      // The World Within
       {
-        id: 'tache-lik',
-        title: 'Tache-Lik',
-        description: 'Educational platform dedicated to guiding and mentoring students.',
-        longDescription: 'Tache-Lik is an innovative educational platform that I founded to guide and mentor students in their academic journey. The platform provides personalized learning paths, mentorship programs, and educational resources to help students achieve their goals.',
-        image: '/images/portfolio/tache-lik.png',
-        coverImage: '/images/portfolio/tache-lik.png',
+        id: 'tww',
+        title: 'The World Within',
+        description: 'An engaging game developed using SDL and C language.',
+        longDescription: 'The World Within is an engaging game developed using SDL and C language. The game features an immersive storyline where players explore different worlds filled with puzzles and challenges. This project showcases expertise in game mechanics, design, and optimization using the SDL framework and C language.',
+        image: '/images/portfolio/tww_logo.png',
+        coverImage: '/images/portfolio/tww_cover.png',
         videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        category: ['Education', 'Mentorship'],
-        technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+        category: ['Game Development', 'SDL', 'C Language'],
+        technologies: ['SDL', 'C Language', 'Game Development'],
         skills: [
-          { name: 'React', imageType: 'fontawesome', image: 'fab fa-react' },
-          { name: 'Node.js', imageType: 'fontawesome', image: 'fab fa-node-js' },
-          { name: 'MongoDB', imageType: 'path', image: '/images/skills/mongodb.png' },
-          { name: 'Socket.io', imageType: 'path', image: '/images/skills/socketio.png' },
-          { name: 'JavaScript', imageType: 'fontawesome', image: 'fab fa-js-square' },
-          { name: 'Education Technology', imageType: 'fontawesome', image: 'fas fa-graduation-cap' }
+          { name: 'C Language', imageType: 'path', image: '/images/skills/c.png' },
+          { name: 'SDL', imageType: 'path', image: '/images/skills/sdl.png' },
+          { name: 'Game Development', imageType: 'fontawesome', image: 'fas fa-gamepad' },
+          { name: 'Graphics Programming', imageType: 'fontawesome', image: 'fas fa-paint-brush' }
         ],
-        liveUrl: 'https://www.tache-lik.tn',
+        liveUrl: 'https://kanm.netlify.app',
         featured: true
       },
+      // Spotipy
+      {
+        id: 'spotipy',
+        title: 'Spotipy',
+        description: 'A powerful music tool that allows you to discover, download, and enjoy your favorite songs from Spotify.',
+        longDescription: 'Spotipy is a powerful music tool that allows you to discover, download, and enjoy your favorite songs from Spotify. With an intuitive interface, Spotipy simplifies music collection management, letting users access their Spotify library offline.',
+        image: '/images/portfolio/spotipy.png',
+        coverImage: '/images/portfolio/spotipy_cover.png',
+        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        category: ['Desktop Application Development'],
+        technologies: ['Desktop Application', 'Spotify API', 'Music Streaming'],
+        skills: [
+          { name: 'Python', imageType: 'fontawesome', image: 'fab fa-python' },
+          { name: 'Spotify API', imageType: 'fontawesome', image: 'fab fa-spotify' },
+          { name: 'Desktop Development', imageType: 'fontawesome', image: 'fas fa-desktop' },
+          { name: 'API Integration', imageType: 'fontawesome', image: 'fas fa-plug' }
+        ],
+        liveUrl: 'https://spotipy-app.netlify.app',
+        featured: true
+      },
+      // Explore My Work
       {
         id: 'explore',
         title: 'Explore My Work',
