@@ -22,7 +22,9 @@ interface Project {
   technologies: string[];
   skills: Skill[];
   liveUrl?: string;
+  liveUrlText?: string; // Custom text for live URL button
   githubUrl?: string;
+  githubUrlText?: string; // Custom text for GitHub URL button
   repositories?: Repository[];
   featured: boolean;
 }
@@ -74,6 +76,7 @@ export class ProjectsManager {
           { name: 'GitHub Actions', imageType: 'fontawesome', image: 'fab fa-github' }
         ],
         liveUrl: 'https://www.tache-lik.tn',
+        liveUrlText: 'Visit Platform',
         featured: true
       },
       // EcoNet
@@ -84,7 +87,7 @@ export class ProjectsManager {
         longDescription: 'EcoNet is a comprehensive ecological platform that empowers businesses, organizations, and individuals to track, analyze, and optimize their environmental impact. Features both a Symfony web application and JavaFX desktop companion with AI integration, community forums, marketplace, donation system, face recognition authentication, and advanced analytics for sustainable resource management.',
         image: '/images/portfolio/econet.png',
         coverImage: '/images/portfolio/econet_cover.png',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/watch?v=KewADLXuk7U',
         category: ['Environmental Technology', 'Full-Stack Development', 'AI Integration'],
         technologies: ['Symfony', 'JavaFX', 'MySQL', 'AI/ML', 'OAuth2', 'Face Recognition'],
         skills: [
@@ -108,12 +111,12 @@ export class ProjectsManager {
         repositories: [
           {
             name: 'EcoNet Web',
-            url: 'https://github.com/HamaBTW/econet-web',
+            url: 'https://github.com/fekikarim/econet',
             description: 'Symfony 6.4 web application with PHP 8.1+, featuring community forums, marketplace, and AI integration'
           },
           {
             name: 'EcoNet Desktop',
-            url: 'https://github.com/HamaBTW/econet-desktop',
+            url: 'https://github.com/fekikarim/econet-java',
             description: 'JavaFX 17 desktop application with AI chatbot, face recognition, and real-time analytics'
           }
         ],
@@ -127,7 +130,7 @@ export class ProjectsManager {
         longDescription: 'HireUp is an innovative recruitment platform that leverages artificial intelligence to streamline the hiring process. Features advanced job matching algorithms, AI chatbot assistance, face recognition authentication, voice navigation, real-time messaging, comprehensive analytics, and secure payment processing for both employers and job seekers.',
         image: '/images/portfolio/hu.png',
         coverImage: '/images/portfolio/hireup_cover.png',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/watch?v=VMWyU_d40Jo',
         category: ['AI/ML Platform', 'Recruitment Technology', 'Full-Stack Development'],
         technologies: ['PHP', 'MySQL', 'Python', 'AI/ML', 'Bootstrap', 'OpenCV', 'Ollama', 'Stripe'],
         skills: [
@@ -148,7 +151,8 @@ export class ProjectsManager {
           { name: 'Voice Recognition', imageType: 'fontawesome', image: 'fas fa-microphone' },
           { name: 'PDF Generation', imageType: 'fontawesome', image: 'fas fa-file-pdf' }
         ],
-        githubUrl: 'https://github.com/HamaBTW/web-project-hireup-hama-git/tree/hama',
+        githubUrl: 'https://github.com/HamaBTW/hireup',
+        githubUrlText: 'Source Code',
         featured: true
       },
       // Clothify
@@ -159,7 +163,7 @@ export class ProjectsManager {
         longDescription: 'Clothify is a comprehensive waste management system built with Qt C++ that provides end-to-end solutions for waste collection, employee management, client relations, and fleet operations. Features Arduino-based RFID access control, real-time notifications, mapping services, advanced analytics, and automated reporting to streamline waste management operations.',
         image: '/images/portfolio/clothify.png',
         coverImage: '/images/portfolio/clothify_cover.png',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/watch?v=GDxTGyaTj8o',
         category: ['Desktop Application', 'IoT Integration', 'Waste Management'],
         technologies: ['Qt C++', 'Arduino', 'SQL', 'RFID', 'QML', 'ODBC'],
         skills: [
@@ -178,7 +182,10 @@ export class ProjectsManager {
           { name: 'Fleet Management', imageType: 'fontawesome', image: 'fas fa-truck' },
           { name: 'IoT Integration', imageType: 'fontawesome', image: 'fas fa-microchip' }
         ],
+        githubUrl: 'https://github.com/HamaBTW/Clothify',
+        githubUrlText: 'GitHub Repo',
         liveUrl: 'https://clothify-app.netlify.app',
+        liveUrlText: 'More Details',
         featured: true
       },
       // The World Within
@@ -189,7 +196,7 @@ export class ProjectsManager {
         longDescription: 'The World Within is an award-winning 2D side-scrolling platformer game developed using SDL 1.2. This engaging adventure game emerged victorious in university competitions, securing 2nd place at both "Game Day 2023" and the prestigious "Bal des Projets 2023" by Esprit. Features multi-level adventure, dynamic combat system, interactive storytelling, puzzle integration, and Arduino controller support.',
         image: '/images/portfolio/tww_logo.png',
         coverImage: '/images/portfolio/tww_cover.png',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        videoUrl: 'https://www.youtube.com/watch?v=jf0BkSjuGEM',
         category: ['Award-Winning Game', '2D Platformer', 'SDL Development'],
         technologies: ['SDL 1.2', 'C Language', 'Arduino Integration', 'Game Engine', 'Physics'],
         skills: [
@@ -209,6 +216,7 @@ export class ProjectsManager {
           { name: 'Minimap System', imageType: 'fontawesome', image: 'fas fa-compass' }
         ],
         liveUrl: 'https://kanm.netlify.app',
+        liveUrlText: 'More Details',
         featured: true
       },
       // Spotipy
@@ -219,7 +227,6 @@ export class ProjectsManager {
         longDescription: 'Spotipy is a comprehensive Spotify application suite that allows users to manage their Spotify playlists and download music from YouTube. Features both web and desktop interfaces with modern UI design, OAuth authentication, real-time download progress tracking, theme support, and powerful batch download capabilities for offline music access.',
         image: '/images/portfolio/spotipy.png',
         coverImage: '/images/portfolio/spotipy_cover.png',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         category: ['Desktop Application', 'Web Application', 'Music Technology'],
         technologies: ['Python', 'Flask', 'Flet', 'Spotify API', 'YouTube API', 'OAuth 2.0'],
         skills: [
@@ -239,6 +246,7 @@ export class ProjectsManager {
           { name: 'Music Streaming', imageType: 'fontawesome', image: 'fas fa-music' }
         ],
         liveUrl: 'https://spotipy-app.netlify.app',
+        liveUrlText: 'Download App',
         featured: true
       },
       // Explore My Work
@@ -257,6 +265,7 @@ export class ProjectsManager {
           { name: 'Innovation', imageType: 'fontawesome', image: 'fas fa-lightbulb' }
         ],
         githubUrl: 'https://github.com/HamaBTW',
+        githubUrlText: 'Visit GitHub',
         featured: false
       }
     ];

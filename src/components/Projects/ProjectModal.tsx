@@ -131,7 +131,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Live Demo
+                {project.liveUrlText || 'Live Demo'}
               </a>
             )}
 
@@ -143,7 +143,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View Code
+                {project.githubUrlText || 'View Code'}
               </a>
             )}
 
