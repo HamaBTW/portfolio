@@ -114,17 +114,17 @@ export const personalInfo: PersonalInfo = {
       location: "Remote",
       startDate: "Dec 4, 2024",
       endDate: "Dec 16, 2024",
-      description: "Developed the frontend of a Flutter application for a client, focusing on modern technologies and user experience.",
+      description: "Architected and developed a high-performance Flutter mobile application frontend, implementing responsive UI components and seamless user interactions. Delivered a polished, cross-platform solution that enhanced client engagement and user experience through modern design principles and optimized performance.",
       technologies: ["Flutter", "Dart"]
     },
     {
-      title: "Tunisie Telecom · Internship",
+      title: "Technical Intern",
       company: "Tunisie Telecom",
       location: "Tunisia",
       startDate: "Jun 2023",
       endDate: "Jul 2023",
-      description: "did a technical internship at Tunisie Telecom",
-      technologies: ["network", "connectivity"]
+      description: "Completed a comprehensive technical internship focused on telecommunications infrastructure and network systems. Gained hands-on experience with enterprise-level network architecture, connectivity solutions, and telecommunications protocols while contributing to operational efficiency improvements.",
+      technologies: ["Network Architecture", "Telecommunications", "Infrastructure"]
     }
   ],
   education: [
