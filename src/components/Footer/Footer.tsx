@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = () => {
       <div className="row">
         <div className="column ss-copyright">
           <span>© Copyright {personalInfo.name} {currentYear}</span>
-          <span>Portfolio designed and developed by <a href={personalInfo.socialLinks.find(link => link.name === 'LinkedIn')?.url}>{personalInfo.name}</a>. Check out my work on <a href={personalInfo.socialLinks.find(link => link.name === 'GitHub')?.url}>GitHub</a>.</span>
+          <span>Portfolio designed and developed by <a href={personalInfo.socialLinks.find(link => link.name === 'LinkedIn')?.url} target="_blank" rel="noopener noreferrer">{personalInfo.name}</a>. Check out my work on <a href={personalInfo.socialLinks.find(link => link.name === 'GitHub')?.url} target="_blank" rel="noopener noreferrer">GitHub</a>.</span>
         </div>
 
         <div className="ss-go-top">

@@ -50,7 +50,7 @@ export const personalInfo: PersonalInfo = {
   subtitle: "Engineering Student & Computer Science Enthusiast",
   description: "I am Mohamed Abidi, an engineering student with an unyielding passion for solving complex problems and building impactful solutions. My academic journey and professional projects revolve around my core strengths in computer science, web development, and Arduino programming.",
   email: "abidi.mohamed.business@gmail.com",
-  phone: "+216 93 213 636",
+  phone: "+216 99 290 230",
   location: "Tunisia",
   avatar: "/images/portfolio/ma.png",
   aboutImage: "/images/portfolio/ma_about2.png",
@@ -109,13 +109,22 @@ export const personalInfo: PersonalInfo = {
       technologies: ["React", "Node.js", "MongoDB", "Socket.io"]
     },
     {
-      title: "Full Stack Developer",
+      title: "Flutter Developer",
       company: "Freelance",
       location: "Remote",
-      startDate: "2022",
-      endDate: "Present",
-      description: "Developed various web applications and e-commerce platforms for clients, focusing on modern technologies and user experience.",
-      technologies: ["React", "TypeScript", "Express", "MongoDB", "PostgreSQL"]
+      startDate: "Dec 4, 2024",
+      endDate: "Dec 16, 2024",
+      description: "Developed the frontend of a Flutter application for a client, focusing on modern technologies and user experience.",
+      technologies: ["Flutter", "Dart"]
+    },
+    {
+      title: "Tunisie Telecom · Internship",
+      company: "Tunisie Telecom",
+      location: "Tunisia",
+      startDate: "Jun 2023",
+      endDate: "Jul 2023",
+      description: "did a technical internship at Tunisie Telecom",
+      technologies: ["network", "connectivity"]
     }
   ],
   education: [
@@ -123,9 +132,17 @@ export const personalInfo: PersonalInfo = {
       degree: "Engineering Degree in Computer Science",
       institution: "ESPRIT",
       location: "Tunisia",
-      startDate: "2021",
-      endDate: "2024",
+      startDate: "2022",
+      endDate: "2027",
       description: "Specialized in software engineering and computer science with focus on web development and system design."
+    },
+    {
+      degree: "Bachelor's Degree in Computer Science",
+      institution: "Lycée Cité Errafaha – Ariana, Tunisia",
+      location: "Tunisia",
+      startDate: "2020",
+      endDate: "2019",
+      description: "Focused on computer science and mathematics with emphasis on programming and algorithmic thinking."
     }
   ]
 };

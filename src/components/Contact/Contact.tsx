@@ -48,7 +48,7 @@ const Contact: React.FC<ContactProps> = () => {
       </div>
 
       <div className="row contact-bottom">
-        <div className="column lg-3 md-5 tab-6 stack-on-550 contact-block">
+        <div className="column lg-4 md-6 tab-12 stack-on-550 contact-block">
           <h3 className="text-pretitle">Get in Touch</h3>
           <p className="contact-links">
             <a href={`mailto:${personalInfo.email}`} className="mailtoui">{personalInfo.email}</a> <br />
@@ -57,7 +57,7 @@ const Contact: React.FC<ContactProps> = () => {
             )}
           </p>
         </div>
-        <div className="column lg-4 md-5 tab-6 stack-on-550 contact-block">
+        <div className="column lg-4 md-6 tab-12 stack-on-550 contact-block">
           <h3 className="text-pretitle">Find Me Online</h3>
           <ul className="contact-social">
             {personalInfo.socialLinks.map((link, index) => (
@@ -69,7 +69,7 @@ const Contact: React.FC<ContactProps> = () => {
             ))}
           </ul>
         </div>
-        <div className="column lg-4 md-12 contact-block">
+        <div className="column lg-4 md-12 tab-12 contact-block">
           <a href={`mailto:${personalInfo.email}`} className="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello</a>
         </div>
       </div>
