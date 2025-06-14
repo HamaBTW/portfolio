@@ -55,17 +55,17 @@ const Testimonials: React.FC<TestimonialProps> = () => {
   const testimonials = [
     {
       id: 1,
-      image: "images/avatars/user-02.jpg",
-      name: "Jameela App",
-      title: "Mobile Application",
-      quote: "Collaborating on cutting-edge software with a focus on innovation, usability, and scalability has been a game-changer. The results not only met our expectations but exceeded them in terms of creativity and technical execution. Truly a leader in technological solutions."
-    },
-    {
-      id: 2,
       image: "images/portfolio/tache-lik.png",
       name: "University Students",
       title: "Educational Platform Clients",
       quote: "A platform that transformed how we approach learning and collaboration. The intuitive design and seamless functionality provided us with the tools to innovate, learn, and grow. A trusted partner in shaping the next generation of developers and creators."
+    },
+    {
+      id: 2,
+      image: "images/icons/Jameela.svg",
+      name: "Jameela App",
+      title: "Mobile Application",
+      quote: "Collaborating on cutting-edge software with a focus on innovation, usability, and scalability has been a game-changer. The results not only met our expectations but exceeded them in terms of creativity and technical execution. Truly a leader in technological solutions."
     },
     {
       id: 3,
