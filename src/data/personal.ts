@@ -52,8 +52,8 @@ export const personalInfo: PersonalInfo = {
   email: "abidi.mohamed.business@gmail.com",
   phone: "+216 99 290 230",
   location: "Tunisia",
-  avatar: "/images/portfolio/ma.png",
-  aboutImage: "/images/portfolio/ma_about2.png",
+  avatar: "images/portfolio/ma.png",
+  aboutImage: "images/portfolio/ma_about2.png",
   socialLinks: [
     {
       name: "LinkedIn",
