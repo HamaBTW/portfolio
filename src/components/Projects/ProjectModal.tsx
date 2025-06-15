@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Project, Skill } from '../../data/ProjectsManager';
+import { getSkillImagePath } from '../../utils/imagePaths';
 import './Modal.css';
 
 interface ProjectModalProps {
@@ -21,7 +22,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
         return <i className={skill.image} aria-hidden="true"></i>;
       case 'link':
       case 'path':
-        return <img src={skill.image} alt={skill.name} className="skill-icon-img" />;
+        return <img src={getSkillImagePath(skill)} alt={skill.name} className="skill-icon-img" />;
       default:
         return <span className="skill-icon-placeholder">{skill.name.charAt(0)}</span>;
     }
