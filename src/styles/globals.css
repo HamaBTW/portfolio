@@ -2,7 +2,7 @@
  * # GLOBAL STYLES - Mohamed Abidi Portfolio React
  * ------------------------------------------------------------------- */
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## colors
  * ------------------------------------------------------------------- */
 :root {
@@ -81,7 +81,7 @@
     --border-radius : 3px;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## spacing and typography
  * ------------------------------------------------------------------- */
 :root {
@@ -140,7 +140,7 @@
     }
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## grid variables
  * ------------------------------------------------------------------- */
 :root {
@@ -170,7 +170,7 @@
     }
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## base styles
  * ------------------------------------------------------------------- */
 html {
@@ -257,4 +257,62 @@ h1, h2, h3, h4, h5, h6 {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+/* -------------------------------------------------------------------
+ * ## logo styles
+ * ------------------------------------------------------------------- */
+.logo-img {
+    height: 32px;
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.logo-text {
+    vertical-align: middle;
+}
+
+/* Desktop navigation logo */
+.main-nav .home-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main-nav .logo-img {
+    height: 28px;
+    margin-right: 6px;
+}
+
+/* Mobile navigation logo */
+.mobile-home-link a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mobile-home-link .logo-img {
+    height: 24px;
+    margin-right: 6px;
+}
+
+/* Logo hover effects */
+.logo-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(234, 190, 123, 0.3);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .mobile-home-link .logo-img {
+        height: 20px;
+        margin-right: 4px;
+    }
+
+    .mobile-home-link .logo-text {
+        font-size: 0.9em;
+    }
 }

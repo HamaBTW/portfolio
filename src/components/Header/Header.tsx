@@ -8,7 +8,8 @@ const Header: React.FC<HeaderProps> = () => {
       <div className="header-mobile">
         <span className="mobile-home-link">
           <a href="index.html">
-            Mohamed.
+            <img src="images/portfolio/ma.png" alt="Mohamed Abidi" className="logo-img" />
+            <span className="logo-text">Mohamed.</span>
           </a>
         </span>
         <a
@@ -27,7 +28,8 @@ const Header: React.FC<HeaderProps> = () => {
                 href="index.html"
                 className="home-link"
               >
-                Mohamed.
+                <img src="images/portfolio/ma.png" alt="Mohamed Abidi" className="logo-img" />
+                <span className="logo-text">Mohamed.</span>
               </a>
             </li>
             <li className="current">
