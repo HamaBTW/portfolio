@@ -3924,45 +3924,39 @@ img.u-pull-left {
     }
 }
 
+/* -------------------------------------------------------------------
+ * ## CV Download Buttons
+ * ------------------------------------------------------------------- */
+.cv-download-buttons {
+    display         : flex;
+    gap             : 1rem;
+    width           : 100%;
+    margin-top      : var(--vspace-1);
+}
+
+.cv-download-buttons .cv-btn {
+    flex            : 1;
+    margin          : 0;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    gap             : 0.5rem;
+    min-width       : 0;
+}
+
+.cv-download-buttons .cv-btn i {
+    font-size       : var(--text-xs);
+}
+
+/* Responsive: Stack buttons vertically on mobile */
 @media screen and (max-width: 600px) {
-    .modal-popup__video h6,
-    .modal-popup__categories h6,
-    .modal-popup__skills h6 {
-        font-size     : var(--text-sm);
-        margin-bottom : var(--vspace-0_25);
-        margin-top    : var(--vspace-0_5);
+    .cv-download-buttons {
+        flex-direction : column;
+        gap            : 0.75rem;
     }
 
-    .video-container {
-        border-radius : calc(var(--border-radius) * 0.75);
-        margin-bottom : var(--vspace-0_5);
-    }
-
-    .skills-grid {
-        grid-template-columns : repeat(auto-fit, minmax(90px, 1fr));
-        gap                   : var(--vspace-0_375);
-    }
-
-    .skill-item {
-        padding : var(--vspace-0_375);
-    }
-
-    .skill-icon {
-        width  : 24px;
-        height : 24px;
-    }
-
-    .skill-icon i {
-        font-size : 16px;
-    }
-
-    .skill-icon-img {
-        width  : 20px;
-        height : 20px;
-    }
-
-    .skill-name {
-        font-size : calc(var(--text-xs) * 0.9);
+    .cv-download-buttons .cv-btn {
+        width : 100%;
     }
 }
 

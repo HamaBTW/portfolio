@@ -25,16 +25,28 @@ const About: React.FC<AboutProps> = () => {
             <p className="attention-getter" data-animate-el>
               {personalInfo.description}
             </p>
-            <a
-              href={`${process.env.PUBLIC_URL}/Mohamed Abidi Resume.pdf`}
-              className="btn btn--medium u-fullwidth"
-              data-animate-el
-              download="Mohamed_Abidi_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download CV
-            </a>
+            <div className="cv-download-buttons" data-animate-el>
+              <a
+                href={`${process.env.PUBLIC_URL}/Mohamed Abidi Resume.pdf`}
+                className="btn btn--medium cv-btn"
+                download="Mohamed_Abidi_Resume_EN.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fas fa-download"></i>
+                Download CV (EN)
+              </a>
+              <a
+                href={`${process.env.PUBLIC_URL}/Mohamed Abidi Resume FR.pdf`}
+                className="btn btn--medium cv-btn"
+                download="Mohamed_Abidi_Resume_FR.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fas fa-download"></i>
+                Download CV (FR)
+              </a>
+            </div>
           </div>
         </div>
       </div>
