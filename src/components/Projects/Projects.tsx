@@ -7,23 +7,14 @@ interface ProjectsProps {}
 
 const Projects: React.FC<ProjectsProps> = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [currentPage, setCurrentPage] = useState<number>(1);
   const [displayedProjects, setDisplayedProjects] = useState<Project[]>([]);
-  const [hasMore, setHasMore] = useState<boolean>(false);
   const [totalProjects, setTotalProjects] = useState<number>(0);
 
-  const projectsPerPage = 5; // Show 5 projects + 1 button slot
-
   useEffect(() => {
-    loadProjects();
-  }, [currentPage]);
-
-  const loadProjects = () => {
-    const result = projectsManager.getProjectsPaginated(currentPage, projectsPerPage);
-    setDisplayedProjects(result.projects);
-    setHasMore(result.hasMore);
-    setTotalProjects(result.total);
-  };
+    const allProjects = projectsManager.getAllProjects();
+    setDisplayedProjects(allProjects);
+    setTotalProjects(allProjects.length);
+  }, []);
 
   const openModal = (project: Project) => {
     setSelectedProject(project);
@@ -33,13 +24,13 @@ const Projects: React.FC<ProjectsProps> = () => {
     setSelectedProject(null);
   };
 
-  const loadMoreProjects = () => {
-    setCurrentPage(prevPage => prevPage + 1);
-  };
+  // const loadMoreProjects = () => {
+  //   setCurrentPage(prevPage => prevPage + 1);
+  // };
 
-  const showLessProjects = () => {
-    setCurrentPage(1);
-  };
+  // const showLessProjects = () => {
+  //   setCurrentPage(1);
+  // };
 
   return (
     <section id="works" className="s-works target-section">
@@ -96,8 +87,8 @@ const Projects: React.FC<ProjectsProps> = () => {
               </li>
             ))}
 
-            {/* Show More Button as 6th Grid Item */}
-            {hasMore && (
+            {/* Show More Button as 6th Grid Item - Commented out to show all projects */}
+            {/* {hasMore && (
               <li className="folio-list__item column folio-list__item--more" data-animate-el>
                 <button
                   className="folio-list__more-btn"
@@ -110,7 +101,7 @@ const Projects: React.FC<ProjectsProps> = () => {
                   </div>
                 </button>
               </li>
-            )}
+            )} */}
           </ul>
 
           {/* Projects counter */}
