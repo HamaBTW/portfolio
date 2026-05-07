@@ -79,6 +79,39 @@ export class ProjectsManager {
         liveUrlText: 'Visit Platform',
         featured: true
       },
+      // ADACTIM CTI Platform
+      {
+        id: 'adactim-cti',
+        title: 'ADACTIM CTI Platform',
+        description: 'AI-powered Cyber Threat Intelligence platform focused on automation, threat analysis, and MITRE ATT&CK mapping.',
+        longDescription: 'The ADACTIM CTI Platform is a full-stack Cyber Threat Intelligence solution developed during my internship at Adactim (July–September 2025). The platform automates the entire threat intelligence lifecycle by aggregating data from multiple intelligence sources, processing unstructured threat reports using LLMs, and mapping them directly to the MITRE ATT&CK framework with confidence scoring. The system features automated ingestion pipelines, AI-powered analysis, STIX 2.1 export capabilities, and a modern desktop GUI built with Python Flet for real-time monitoring and analyst interaction. The project was designed to reduce repetitive manual analysis and accelerate cybersecurity workflows through intelligent automation.',
+        image: `${process.env.PUBLIC_URL}/images/portfolio/adactim_cti.jpg`,
+        coverImage: `${process.env.PUBLIC_URL}/images/portfolio/adactim_cti_cover.png`,
+        category: ['Cybersecurity', 'Artificial Intelligence', 'Automation', 'Threat Intelligence'],
+        technologies: ['Python', 'Flask', 'Flet', 'Pydantic', 'BeautifulSoup4', 'MITRE ATT&CK', 'STIX 2.1', 'LLMs'],
+        skills: [
+          { name: 'Python', imageType: 'fontawesome', image: 'fab fa-python' },
+          { name: 'Flask', imageType: 'path', image: 'images/icons/flask.svg' },
+          { name: 'Flet', imageType: 'path', image: 'images/icons/flet.svg' },
+          { name: 'Pydantic', imageType: 'fontawesome', image: 'fas fa-check-circle' },
+          { name: 'BeautifulSoup4', imageType: 'fontawesome', image: 'fas fa-spider' },
+          { name: 'MITRE ATT&CK', imageType: 'fontawesome', image: 'fas fa-shield-alt' },
+          { name: 'STIX 2.1', imageType: 'fontawesome', image: 'fas fa-project-diagram' },
+          { name: 'REST API', imageType: 'fontawesome', image: 'fas fa-plug' },
+          { name: 'Automation', imageType: 'fontawesome', image: 'fas fa-gears' },
+          { name: 'LLMs', imageType: 'fontawesome', image: 'fas fa-robot' },
+          { name: 'Google Gemini', imageType: 'fontawesome', image: 'fab fa-google' },
+          { name: 'OpenAI GPT-4', imageType: 'fontawesome', image: 'fas fa-brain' },
+          { name: 'Groq', imageType: 'fontawesome', image: 'fas fa-bolt' },
+          { name: 'OpenRouter', imageType: 'fontawesome', image: 'fas fa-network-wired' },
+          { name: 'MISP Integration', imageType: 'fontawesome', image: 'fas fa-database' },
+          { name: 'AlienVault OTX', imageType: 'fontawesome', image: 'fas fa-globe' },
+          { name: 'Web Scraping', imageType: 'fontawesome', image: 'fas fa-search' }
+        ],
+        liveUrl: 'https://www.linkedin.com/feed/update/urn:li:activity:7457903745083957248/',
+        liveUrlText: 'LinkedIn Project Post',
+        featured: true
+      },
       // EcoNet
       {
         id: 'econet',

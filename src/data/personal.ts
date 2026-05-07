@@ -109,6 +109,26 @@ export const personalInfo: PersonalInfo = {
       technologies: ["React", "Node.js", "MongoDB", "Socket.io"]
     },
     {
+      title: "AI & Cybersecurity Intern",
+      company: "Adactim",
+      location: "Tunisia",
+      startDate: "Jul 8, 2025",
+      endDate: "Sep 8, 2025",
+      description: "Developed a full-stack Cyber Threat Intelligence (CTI) platform focused on automating cybersecurity analysis workflows using AI. Built automated pipelines for threat intelligence ingestion from sources such as MISP, AlienVault OTX, and tunCERT, then processed and mapped unstructured threat data to the MITRE ATT&CK framework using LLMs with confidence scoring. Designed a modern desktop interface with Python Flet for real-time monitoring, step-by-step analysis, and STIX 2.1 export capabilities for SIEM/SOAR integration.",
+      technologies: [
+        "Python",
+        "Flask",
+        "Flet",
+        "Pydantic",
+        "BeautifulSoup4",
+        "MITRE ATT&CK",
+        "STIX 2.1",
+        "LLMs",
+        "Automation",
+        "Cyber Threat Intelligence"
+      ]
+    },
+    {
       title: "Flutter Developer",
       company: "Freelance",
       location: "Remote",
