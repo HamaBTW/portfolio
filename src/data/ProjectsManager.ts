@@ -79,6 +79,41 @@ export class ProjectsManager {
         liveUrlText: 'Visit Platform',
         featured: true
       },
+      // Loopii Player
+      {
+        id: 'loopii-player',
+        title: 'Loopii Player',
+        description: 'Offline-first music player that lets users import Spotify playlists and download songs for seamless offline listening.',
+        longDescription: 'Loopii Player is an Android application built with Flutter & Dart that allows users to import Spotify playlists, search for songs, and download them directly to their device for offline playback. The app is designed with an offline-first architecture, featuring a smart caching system that automatically stores played songs in the background for instant future access without requiring an internet connection. The goal of the project is to provide a seamless, subscription-free music experience where users can enjoy their favorite playlists anytime, anywhere. Built with a modern dark UI, glassmorphism design, and emerald accent theme, Loopii Player focuses on performance, simplicity, and offline accessibility.',
+        image: `${process.env.PUBLIC_URL}/images/portfolio/loopii.png`,
+        coverImage: `${process.env.PUBLIC_URL}/images/portfolio/loopii_cover.png`,
+        category: ['Mobile Application', 'Music Technology', 'Offline-First Apps'],
+        technologies: [
+          'Flutter',
+          'Dart',
+          'Riverpod',
+          'Hive',
+          'Dio',
+          'media_kit',
+          'Spotify API',
+          'YouTube Explode'
+        ],
+        skills: [
+          { name: 'Flutter', imageType: 'path', image: 'images/icons/flutter.svg' },
+          { name: 'Dart', imageType: 'path', image: 'images/icons/dart.svg' },
+          { name: 'Riverpod', imageType: 'path', image: 'images/icons/riverpod.svg' },
+          { name: 'Hive DB', imageType: 'path', image: 'images/icons/hive.svg' },
+          { name: 'REST APIs', imageType: 'fontawesome', image: 'fas fa-plug' },
+          { name: 'Spotify API', imageType: 'fontawesome', image: 'fab fa-spotify' },
+          { name: 'YouTube Integration', imageType: 'fontawesome', image: 'fab fa-youtube' },
+          { name: 'Offline Storage', imageType: 'fontawesome', image: 'fas fa-download' },
+          { name: 'Audio Streaming', imageType: 'fontawesome', image: 'fas fa-music' },
+          { name: 'Mobile UI/UX', imageType: 'fontawesome', image: 'fas fa-mobile-alt' }
+        ],
+        liveUrl: 'https://loopiiplayer.giize.com/',
+        liveUrlText: 'Try Loopii Player',
+        featured: true
+      },
       // ADACTIM CTI Platform
       {
         id: 'adactim-cti',
