@@ -79,6 +79,7 @@ export const personalInfo: PersonalInfo = {
     { name: "Python", category: "Programming" },
     { name: "Java", category: "Programming" },
     { name: "C++", category: "Programming" },
+    { name: "Dart", category: "Programming" },
 
     // Web Development
     { name: "React", category: "Frontend" },
