@@ -54,7 +54,7 @@ export class ProjectsManager {
         longDescription: 'Tache-Lik is an innovative educational platform that I founded to guide and mentor students in their academic journey. The platform provides personalized learning paths, mentorship programs, and educational resources with real-time features, AI integration, and comprehensive video learning capabilities.',
         image: `${process.env.PUBLIC_URL}/images/portfolio/tache-lik.png`,
         coverImage: `${process.env.PUBLIC_URL}/images/portfolio/tache-lik-cover.jpg`,
-        videoUrl: 'https://www.youtube.com/watch?v=24EC5hyswGw',
+        videoUrl: 'https://www.youtube.com/watch?v=Rcr87xV3MPs',
         category: ['Education Technology', 'Full-Stack Development', 'Real-time Applications'],
         technologies: ['React 18', 'TypeScript', 'Node.js', 'MySQL', 'Socket.io', 'Express.js', 'JWT', 'Docker'],
         skills: [
