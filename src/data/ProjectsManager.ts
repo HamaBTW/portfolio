@@ -101,7 +101,7 @@ export class ProjectsManager {
         skills: [
           { name: 'Flutter', imageType: 'path', image: 'images/icons/flutter.svg' },
           { name: 'Dart', imageType: 'path', image: 'images/icons/dart.svg' },
-          { name: 'Riverpod', imageType: 'path', image: 'images/icons/riverpod.svg' },
+          { name: 'Riverpod', imageType: 'path', image: 'images/icons/Riverpod.svg' },
           { name: 'Hive DB', imageType: 'path', image: 'images/icons/hive.svg' },
           { name: 'REST APIs', imageType: 'fontawesome', image: 'fas fa-plug' },
           { name: 'Spotify API', imageType: 'fontawesome', image: 'fab fa-spotify' },
