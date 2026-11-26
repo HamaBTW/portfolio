@@ -22,7 +22,9 @@ Status legend: ✅ done · 🔜 next · 🗓 later
 - ✅ Reveal footer with giant wordmark
 
 ## Phase 2 — Ship it 🔜
-- 🔜 **Fill in what only you know** in `src/data/content.ts` (search for `TODO`): availability line (e.g. "Looking for a PFE internship — Feb 2027"), per-project role + outcome numbers (users on Tache-Lik, reports processed at Adactim…)
+- ✅ Synced with LinkedIn (Nov 2026): Clubedge internship, AnOps / Farmy / Farmy Mini / Tâche-Lik Mobile, Certifications section, PFE availability — see `report.md`
+- 🔜 Add Tunisie Telecom, Jameela and ESPRIT education to LinkedIn (`report.md` §3) — Tache-Lik dates resolved: startup 2023, phone app 2024
+- 🔜 Real screenshots + links for Clubedge Mobile, AnOps, Tâche-Lik Mobile, Farmy Mini
 - ✅ Images and CVs copied into `public/`, images converted to WebP (3.4 MB → 188 KB) — `npm run images` converts new ones
 - 🔜 Deploy to GitHub Pages (`vite.config.ts` → `base: '/portfolio/'` or use a custom domain) or Vercel
 - 🔜 Add Open Graph image, meta description, favicon set, `robots.txt`, `sitemap.xml`

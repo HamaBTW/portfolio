@@ -12,6 +12,7 @@ import { useEffect, useRef, useState } from 'react'
 import { projects, type Project } from '../data/content'
 import { EASE_OUT, openProject } from '../lib/motion'
 import { LineReveal, Reveal } from './Reveal'
+import { ProjectCover } from './ProjectCover'
 import { Tags } from './Tags'
 import './Work.css'
 
@@ -68,12 +69,16 @@ function StackCard({
           </div>
         </div>
         <div className="card__media">
-          <motion.img
-            src={p.cover}
-            alt={`${p.title} — screenshot`}
-            loading="lazy"
-            style={{ y: reduce ? 0 : imgY }}
-          />
+          {p.cover ? (
+            <motion.img
+              src={p.cover}
+              alt={`${p.title} — screenshot`}
+              loading="lazy"
+              style={{ y: reduce ? 0 : imgY }}
+            />
+          ) : (
+            <ProjectCover p={p} className="card__pcover" alt={`${p.title} cover`} />
+          )}
         </div>
         <motion.div className="card__dim" style={{ opacity: dim }} aria-hidden />
       </motion.article>
@@ -122,14 +127,7 @@ function CursorPreview({ active }: { active: Project | null }) {
             transition={{ duration: 0.25, ease: EASE_OUT }}
           >
             {projects.map((p) => (
-              <img
-                key={p.id}
-                src={p.cover}
-                alt=""
-                className="preview__img"
-                data-on={active.id === p.id}
-                loading="lazy"
-              />
+              <ProjectCover key={p.id} p={p} className="preview__img" data-on={active.id === p.id} />
             ))}
           </motion.div>
         )}
@@ -200,7 +198,7 @@ export function Work() {
                       <path d="M5 13 13 5M6 5h7v7" fill="none" stroke="currentColor" strokeWidth="1.5" />
                     </svg>
                   </span>
-                  <img className="row__thumb" src={p.cover} alt="" loading="lazy" />
+                  <ProjectCover p={p} className="row__thumb" />
                 </button>
               </Reveal>
             ))}

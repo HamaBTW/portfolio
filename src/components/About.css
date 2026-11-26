@@ -13,8 +13,11 @@
 
 .about__photo img {
   width: 100%;
+  /* without this the img's height="1000" attribute wins over aspect-ratio */
+  height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: 50% 30%;
   border-radius: var(--r-md);
   background: var(--ink-2);
 }
@@ -51,9 +54,11 @@
   border-top: 1px solid var(--line);
 }
 
+/* 2 × 2 (default, tablets and phones) */
 .fact {
   padding: var(--s-5) var(--s-5) var(--s-5) 0;
   border-bottom: 1px solid var(--line);
+  min-width: 0;
 }
 
 .fact:nth-child(odd) {
@@ -66,9 +71,9 @@
 
 .fact__value {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
   font-weight: 600;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
@@ -80,13 +85,98 @@
   max-width: 26ch;
 }
 
-@media (max-width: 900px) {
+/* Side-by-side layout (>1100px): one row of four, so the text column ends level
+   with the photo instead of running 250–330px past it. */
+@media (min-width: 1101px) {
+  .about {
+    align-items: start;
+  }
+  .facts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: var(--s-5);
+  }
+  .fact,
+  .fact:nth-child(odd),
+  .fact:nth-child(even) {
+    padding: var(--s-5) var(--s-4);
+    border-right: 1px solid var(--line);
+  }
+  .fact:first-child {
+    padding-left: 0;
+  }
+  .fact:last-child {
+    border-right: 0;
+    padding-right: 0;
+  }
+  .fact__value {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+  .fact__label {
+    font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  }
+}
+
+/* Mid-size screens: a wider photo column (5 of 12) so photo and text match in height */
+@media (min-width: 1101px) and (max-width: 1299px) {
+  .about__photo {
+    grid-column: 1 / span 5;
+  }
+  .about__text {
+    grid-column: 6 / -1;
+  }
+  .fact,
+  .fact:nth-child(odd),
+  .fact:nth-child(even) {
+    padding-inline: var(--s-3);
+  }
+  .fact:first-child {
+    padding-left: 0;
+  }
+}
+
+/* ≤1100px the text column gets so narrow the bio wraps into a tall block and leaves
+   a big hole under the photo — stack instead: photo, then bio and stats full width. */
+@media (max-width: 1100px) {
   .about__photo,
   .about__text {
     grid-column: 1 / -1;
   }
+  .about {
+    row-gap: var(--s-6);
+  }
   .about__photo {
-    max-width: 420px;
+    max-width: 360px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1100px) {
+  .facts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .fact,
+  .fact:nth-child(odd),
+  .fact:nth-child(even) {
+    padding: var(--s-5) var(--s-4);
+    border-right: 1px solid var(--line);
+  }
+  .fact:first-child {
+    padding-left: 0;
+  }
+  .fact:last-child {
+    border-right: 0;
+  }
+}
+
+/* Small phones: tighter stat cells so "2023" never crowds its label */
+@media (max-width: 420px) {
+  .fact {
+    padding: var(--s-4) var(--s-3) var(--s-4) 0;
+  }
+  .fact:nth-child(even) {
+    padding-left: var(--s-3);
+  }
+  .fact__label {
+    font-size: 0.8125rem;
   }
 }
 

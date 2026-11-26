@@ -196,3 +196,86 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* logo + title row */
+.drawer__heading {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin-top: var(--s-3);
+}
+
+.drawer__heading .drawer__title {
+  margin-top: 0;
+}
+
+.drawer__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+}
+
+/* gallery: horizontal scroll-snap strip, fixed height, mixed aspect ratios */
+.drawer__count {
+  color: var(--paper-mute);
+}
+
+.drawer__gallery {
+  display: flex;
+  gap: var(--s-3);
+  margin-top: var(--s-3);
+  margin-inline: calc(var(--s-6) * -1);
+  padding-inline: var(--s-6);
+  padding-bottom: var(--s-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--s-6);
+  overscroll-behavior-x: contain;
+}
+
+.drawer__gallery li {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.drawer__gallery a {
+  display: block;
+  height: 340px;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--ink-3);
+  transition: border-color var(--dur-fast) ease, transform var(--dur-press) var(--ease-out);
+}
+
+.drawer__gallery a:active {
+  transform: scale(0.98);
+}
+
+.drawer__gallery img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .drawer__gallery a:hover {
+    border-color: var(--paper-mute);
+  }
+}
+
+@media (max-width: 640px) {
+  .drawer__gallery {
+    margin-inline: calc(var(--s-4) * -1);
+    padding-inline: var(--s-4);
+    scroll-padding-inline: var(--s-4);
+  }
+  .drawer__gallery a {
+    height: 260px;
+  }
+  .drawer__logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+  }
+}

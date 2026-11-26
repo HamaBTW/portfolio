@@ -9,7 +9,7 @@ export function Recognition() {
       <div className="container">
         <header className="section-head">
           <div className="label">
-            <span>04 / Recognition</span>
+            <span>05 / Recognition</span>
           </div>
           <h2 id="recog-title" className="sr-only">
             Recognition

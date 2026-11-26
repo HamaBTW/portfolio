@@ -12,7 +12,7 @@ export function About() {
       <div className="container">
         <header className="section-head">
           <div className="label">
-            <span>03 / About</span>
+            <span>04 / About</span>
             <span>{profile.location}</span>
           </div>
           <h2 id="about-title">

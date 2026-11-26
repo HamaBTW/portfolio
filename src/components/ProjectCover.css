@@ -1,0 +1,90 @@
+/* Generated cover for projects without a screenshot. Sized by its parent (fills it).
+   Type scales with the cover's own width (container query), so it works from a
+   48px manifesto pill up to a full drawer. */
+.pcover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  container-type: size;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 7cqmin;
+  background: radial-gradient(120% 90% at 100% 0%, rgb(255 90 31 / 0.16), transparent 60%), var(--ink-3);
+  color: var(--paper);
+  text-align: left;
+}
+
+.pcover__grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 8cqmin 8cqmin;
+  opacity: 0.55;
+  mask-image: linear-gradient(135deg, #000 20%, transparent 85%);
+}
+
+.pcover > :not(.pcover__grid) {
+  position: relative;
+}
+
+.pcover__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 4cqmin;
+  font-family: var(--font-mono);
+  font-size: clamp(6px, 4cqmin, 13px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper-mute);
+}
+
+.pcover__top span:first-child {
+  color: var(--signal);
+}
+
+.pcover__title {
+  font-family: var(--font-display);
+  font-weight: 640;
+  font-size: 16cqmin;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.pcover__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2cqmin 4cqmin;
+  font-family: var(--font-mono);
+  font-size: clamp(6px, 3.6cqmin, 12px);
+  color: var(--paper-dim);
+}
+
+.pcover__stack li {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5cqmin;
+}
+
+.pcover__stack .ticon {
+  width: clamp(8px, 5cqmin, 18px);
+  height: clamp(8px, 5cqmin, 18px);
+  color: var(--paper-dim);
+}
+
+/* very small covers (manifesto pill, phone thumbnails): title only */
+@container (max-height: 90px) {
+  .pcover__top,
+  .pcover__stack {
+    display: none;
+  }
+  .pcover {
+    justify-content: center;
+  }
+  .pcover__title {
+    font-size: 28cqmin;
+  }
+}

@@ -25,6 +25,7 @@ export function CommandPalette() {
     () => [
       { id: 'work', group: 'Navigate', label: 'Selected work', run: () => go('#work') },
       { id: 'xp', group: 'Navigate', label: 'Experience', run: () => go('#experience') },
+      { id: 'certs', group: 'Navigate', label: 'Certifications', run: () => go('#certifications') },
       { id: 'about', group: 'Navigate', label: 'About', run: () => go('#about') },
       { id: 'contact', group: 'Navigate', label: 'Contact', run: () => go('#contact') },
       ...projects.map((p) => ({

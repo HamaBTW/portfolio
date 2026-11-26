@@ -340,3 +340,20 @@
   transform: scale(1);
   filter: blur(0);
 }
+
+/* generated covers (projects without a screenshot) */
+.card__media .card__pcover {
+  position: absolute;
+  inset: 0;
+}
+
+.row__thumb.pcover {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .row__thumb.pcover {
+    display: flex;
+    height: auto;
+  }
+}

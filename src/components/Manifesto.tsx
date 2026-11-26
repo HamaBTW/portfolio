@@ -2,6 +2,7 @@ import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } f
 import { Fragment, useRef } from 'react'
 import { manifesto, projects } from '../data/content'
 import { openProject } from '../lib/motion'
+import { ProjectCover } from './ProjectCover'
 import './Manifesto.css'
 
 type Token =
@@ -53,7 +54,7 @@ function Thumb({ id, range, progress }: { id: string; range: [number, number]; p
       aria-label={`Open ${p.title}`}
     >
       <span className="mf__thumbInner">
-        <img src={p.cover} alt="" loading="lazy" />
+        <ProjectCover p={p} />
       </span>
     </motion.button>
   )

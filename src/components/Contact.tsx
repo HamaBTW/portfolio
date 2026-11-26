@@ -60,7 +60,7 @@ export function Contact() {
       <div className="container">
         <header className="section-head">
           <div className="label">
-            <span>05 / Contact</span>
+            <span>06 / Contact</span>
             <span>{profile.availability}</span>
           </div>
         </header>

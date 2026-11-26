@@ -2,6 +2,8 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { projects } from '../data/content'
 import { EASE_DRAWER, EASE_OUT, OPEN_PROJECT } from '../lib/motion'
+import { OrgBadge } from './OrgBadge'
+import { ProjectCover } from './ProjectCover'
 import { Tags } from './Tags'
 import './ProjectDrawer.css'
 
@@ -121,16 +123,19 @@ export function ProjectDrawer() {
                 transition={{ duration: 0.3, ease: EASE_OUT }}
               >
                 <div className="drawer__cover">
-                  <img src={project.cover} alt={`${project.title} — screenshot`} />
+                  <ProjectCover p={project} alt={`${project.title} — screenshot`} eager />
                 </div>
 
                 <div className="drawer__meta label">
                   <span>{project.kind}</span>
                   <span>{project.year}</span>
                 </div>
-                <h2 id="drawer-title" className="drawer__title">
-                  {project.title}
-                </h2>
+                <div className="drawer__heading">
+                  {project.logo && <OrgBadge name={project.title} logo={project.logo} className="drawer__logo" />}
+                  <h2 id="drawer-title" className="drawer__title">
+                    {project.title}
+                  </h2>
+                </div>
                 <p className="drawer__lead">{project.description}</p>
 
                 <dl className="drawer__grid">
@@ -152,6 +157,24 @@ export function ProjectDrawer() {
                     <li key={h}>{h}</li>
                   ))}
                 </ul>
+
+                {project.gallery && project.gallery.length > 0 && (
+                  <>
+                    <h3 className="label drawer__h">
+                      Gallery <span className="drawer__count">· {project.gallery.length}</span>
+                    </h3>
+                    {/* horizontal strip; each image opens full size in a new tab */}
+                    <ul className="drawer__gallery">
+                      {project.gallery.map((g) => (
+                        <li key={g.src}>
+                          <a href={g.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full size: ${g.alt}`}>
+                            <img src={g.src} alt={g.alt} loading="lazy" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
 
                 <div className="drawer__links">
                   {project.links.map((l) => (

@@ -1,0 +1,148 @@
+/* One row per issuer, like the toolbox: issuer on the left (cols 1–4), certificates on the right. */
+.certs {
+  border-top: 1px solid var(--line);
+}
+
+.certs__row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: var(--s-4);
+  padding-block: var(--s-6);
+  border-bottom: 1px solid var(--line);
+}
+
+.certs__issuer {
+  grid-column: 1 / span 4;
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  align-self: start;
+}
+
+.certs__logo {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid var(--line-strong);
+  background: var(--ink-2);
+  color: var(--paper);
+}
+
+/* brand colour shows at rest here — these are the issuers' marks */
+.certs__logo .ticon {
+  color: var(--brand);
+}
+
+.certs__who {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.certs__name {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.certs__list {
+  grid-column: 5 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.cert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-5);
+  min-height: 64px;
+  padding: var(--s-4) var(--s-5);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--ink-2);
+  transition: border-color var(--dur-fast) ease, background-color var(--dur-fast) ease,
+    transform var(--dur-press) var(--ease-out);
+}
+
+.cert:active {
+  transform: scale(0.99);
+}
+
+.cert__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cert__title {
+  font-weight: 500;
+}
+
+.cert__note {
+  font-size: var(--fs-small);
+  color: var(--paper-mute);
+}
+
+.cert__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.cert__verify {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--paper-dim);
+  transition: color var(--dur-fast) ease;
+}
+
+.cert__verify svg {
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cert:hover {
+    border-color: var(--line-strong);
+    background: var(--ink-3);
+  }
+  .cert:hover .cert__verify {
+    color: var(--signal);
+  }
+  .cert:hover .cert__verify svg {
+    transform: translate(2px, -2px);
+  }
+}
+
+@media (max-width: 900px) {
+  .certs__issuer,
+  .certs__list {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .cert {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s-3);
+  }
+  .cert__meta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

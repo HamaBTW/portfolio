@@ -121,7 +121,7 @@ Reduced motion (`prefers-reduced-motion: reduce`): no translation/scale/parallax
 | `Footer` | `components/Footer.tsx` | Sticky reveal footer with giant wordmark. |
 | `ProjectDrawer` | `components/ProjectDrawer.tsx` | Case study, Esc / backdrop closes, focus returns to trigger, scroll lock. |
 | `Experience` | `components/Experience.tsx` | Log-style timeline with scroll-linked progress rail and logo badges; Education as two cards (ESPRIT shows a live degree-progress bar computed from `start`/`end`). |
-| `About` | `components/About.tsx` | Portrait, bio, facts grid, then the toolbox rows. |
+| `About` | `components/About.tsx` | Portrait (4:5) + bio + stats. >1100px side by side with stats in one row of four so both columns end level (≤76px apart at every width); ≤1100px stacked (photo ≤360px, stats 4-across on tablets, 2×2 on phones). Then the toolbox rows. |
 | `Recognition` | `components/Recognition.tsx` | Quotes / awards. |
 | `Contact` | `components/Contact.tsx` | Headline + note + magnetic button, then a tile grid: email (copy / write), phone + résumé, one tile per social with its handle. Email never breaks mid-word (wraps only after the `@`). |
 | `CommandPalette` | `components/CommandPalette.tsx` | `Ctrl/⌘ + K`, arrow keys, Enter, Esc. |

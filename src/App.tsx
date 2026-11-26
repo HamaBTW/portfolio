@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { About } from './components/About'
+import { Certifications } from './components/Certifications'
 import { CommandPalette } from './components/CommandPalette'
 import { Contact } from './components/Contact'
 import { Experience } from './components/Experience'
@@ -32,6 +33,7 @@ export default function App() {
         <Marquee />
         <Work />
         <Experience />
+        <Certifications />
         <About />
         <Recognition />
         <Contact />
