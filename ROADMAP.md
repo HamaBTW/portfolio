@@ -26,7 +26,7 @@ Status legend: ✅ done · 🔜 next · 🗓 later
 - 🔜 Add Tunisie Telecom, Jameela and ESPRIT education to LinkedIn (`report.md` §3) — Tache-Lik dates resolved: startup 2023, phone app 2024
 - 🔜 Real screenshots + links for Clubedge Mobile, AnOps, Tâche-Lik Mobile, Farmy Mini
 - ✅ Images and CVs copied into `public/`, images converted to WebP (3.4 MB → 188 KB) — `npm run images` converts new ones
-- 🔜 Deploy to GitHub Pages (`vite.config.ts` → `base: '/portfolio/'` or use a custom domain) or Vercel
+- ✅ GitHub Pages deploy without Actions: `npm run deploy` → https://hamabtw.github.io/hama-new-potfolio/ (enable Pages → branch `gh-pages` once)
 - 🔜 Add Open Graph image, meta description, favicon set, `robots.txt`, `sitemap.xml`
 - 🔜 Lighthouse pass ≥ 95 on all four scores; test on a real phone
 
