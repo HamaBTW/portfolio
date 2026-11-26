@@ -1,0 +1,12 @@
+.ticon {
+  flex-shrink: 0;
+  display: inline-block;
+  transition: color var(--dur-fast) ease, transform var(--dur-base) var(--ease-out);
+}
+
+/* Parents opt in to brand-colour hover with .has-tint */
+@media (hover: hover) and (pointer: fine) {
+  .has-tint:hover .ticon {
+    color: var(--brand);
+  }
+}

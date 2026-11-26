@@ -1,0 +1,62 @@
+/* Design tokens — see DESIGN_SYSTEM.md. Components use these only. */
+:root {
+  /* color */
+  --ink: #0b0b0a;
+  --ink-2: #121210;
+  --ink-3: #1a1a17;
+  --line: #2a2925;
+  --line-strong: #3a3934;
+  --paper: #edebe4;
+  --paper-dim: #a9a69c;
+  --paper-mute: #8a877d;
+  --signal: #ff5a1f;
+  --signal-ink: #0b0b0a;
+  --ok: #7bd88f;
+
+  /* type */
+  --font-display: 'Bricolage Grotesque Variable', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  --fs-mega: clamp(3.5rem, 17vw, 15rem);
+  --fs-h1: clamp(2.5rem, 6.4vw, 6rem);
+  --fs-h2: clamp(1.75rem, 3.2vw, 2.75rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+  --fs-label: 0.75rem;
+
+  /* space */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  --page-x: clamp(20px, 4vw, 56px);
+  --gutter: clamp(16px, 2.5vw, 32px);
+  --max: 1440px;
+  --section-y: clamp(80px, 9vw, 144px);
+
+  /* shape */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-pill: 999px;
+  --shadow-float: 0 24px 80px -20px rgb(0 0 0 / 0.6);
+
+  /* motion */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-press: 140ms;
+  --dur-fast: 180ms;
+  --dur-base: 260ms;
+  --dur-slow: 420ms;
+  --dur-hero: 900ms;
+}

@@ -1,0 +1,63 @@
+.foot {
+  position: sticky;
+  bottom: 0;
+  z-index: 0;
+  background: var(--ink-2);
+}
+
+.foot__inner {
+  /* lets the wordmark size itself to this box (cqi), not to the viewport */
+  container-type: inline-size;
+  padding-top: var(--s-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-7);
+}
+
+.foot__row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+}
+
+.foot__time {
+  color: var(--paper);
+  font-variant-numeric: tabular-nums;
+}
+
+.foot__top {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-block: -10px;
+}
+
+.foot__mark {
+  overflow: hidden;
+  font-family: var(--font-display);
+  /* Sized to the container (not the viewport), so it stops growing when the 1440px
+     container does. 16cqi is the no-JS starting point; Footer.tsx (useFitText) then
+     measures the real text and scales it to exactly 99% of the width. */
+  font-size: 16cqi;
+  font-weight: 640;
+  line-height: 0.8;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+  padding-bottom: 0.06em;
+  margin-inline: -0.04em;
+}
+
+.foot__mark span {
+  display: block;
+}
+
+.foot__mark .foot__text {
+  display: inline-block;
+}
+
+.foot__mark em {
+  font-style: normal;
+  color: var(--signal);
+  margin-left: 0.04em;
+}

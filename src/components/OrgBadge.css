@@ -1,0 +1,50 @@
+/* Company / school badge (OrgBadge.tsx) — used in Experience, Education and Recognition.
+   Size it from the parent with a className (width/height/border-radius/font-size). */
+.badge {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--ink-2);
+  font-family: var(--font-display);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  color: var(--paper);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease,
+    transform var(--dur-base) var(--ease-out);
+}
+
+.badge--logo {
+  background: var(--paper);
+  border-color: var(--paper);
+  /* fixed px: a % padding resolves against the PARENT's width and blows the tile up */
+  padding: 8px;
+}
+
+.badge--logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* landscape logos (Tunisie Telecom, ESPRIT) would end up tiny with full padding */
+.badge--wide {
+  padding: 3px;
+}
+
+/* logos that are already a full square icon (Tache-Lik) fill the tile */
+.badge--fill {
+  padding: 0;
+  background: var(--ink-2);
+  border-color: var(--line-strong);
+}
+
+.badge--fill img {
+  object-fit: cover;
+}
+
+.badge--icon {
+  color: var(--paper-dim);
+}
+

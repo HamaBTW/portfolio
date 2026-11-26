@@ -1,0 +1,54 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform var(--dur-press) var(--ease-out), border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.btn--primary {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Signal fill wipes up from the bottom on hover (clip-path, compositor-friendly). */
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--signal);
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path var(--dur-base) var(--ease-out);
+}
+
+.btn--ghost {
+  border: 1px solid var(--line-strong);
+  color: var(--paper);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--primary:hover::before {
+    clip-path: inset(0 0 0 0);
+  }
+  .btn--ghost:hover {
+    border-color: var(--paper-mute);
+  }
+}

@@ -1,0 +1,50 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--ink-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--page-x);
+}
+
+.intro__log {
+  font-family: var(--font-mono);
+  font-size: clamp(0.8125rem, 1.2vw, 1rem);
+  color: var(--paper-mute);
+  line-height: 1.9;
+  margin-bottom: var(--s-6);
+}
+
+.intro__last {
+  color: var(--paper);
+}
+
+.intro__caret {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  background: var(--signal);
+  vertical-align: -0.2em;
+  animation: caret 0.9s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.intro__bar {
+  height: 1px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.intro__fill {
+  display: block;
+  height: 100%;
+  background: var(--signal);
+  transform-origin: left;
+}
