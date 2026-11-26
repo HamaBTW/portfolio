@@ -1,12 +1,12 @@
 # Mohamed Abidi — Portfolio
 
-React + TypeScript + Vite + Motion. Live at **https://hamabtw.github.io/hama-new-potfolio/**
+React + TypeScript + Vite + Motion. Live at **https://hamabtw.github.io/portfolio/**
 
 ```bash
 npm install
 npm run dev      # http://localhost:5173
 npm run build    # type-check + production build into dist/
-npm run preview  # serve that build at http://localhost:4173/hama-new-potfolio/ (exactly like GitHub Pages)
+npm run preview  # serve that build at http://localhost:4173/portfolio/ (exactly like GitHub Pages)
 npm run deploy   # build + publish to GitHub Pages (no GitHub Actions needed)
 npm run images   # convert new PNG/JPGs in public/images/ to WebP
 ```
@@ -19,7 +19,7 @@ branch. `main` and your working tree are never touched.
 One-time setup on GitHub: **Settings → Pages → Build and deployment → Source: "Deploy from a branch"**,
 Branch: **`gh-pages`**, folder **`/ (root)`** → Save. After that, every `npm run deploy` is live in about a minute.
 
-The sub-path `/hama-new-potfolio/` is set in [`vite.config.ts`](vite.config.ts). Renamed the repo or using a
+The sub-path `/portfolio/` is set in [`vite.config.ts`](vite.config.ts). Renamed the repo or using a
 custom domain? Change it there (or build with `BASE=/`).
 
 ## Working on it

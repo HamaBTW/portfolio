@@ -1,10 +1,10 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// GitHub Pages serves this repo at https://hamabtw.github.io/hama-new-potfolio/,
+// GitHub Pages serves this repo at https://hamabtw.github.io/portfolio/,
 // so production assets must be requested from that sub-path.
 // Using a custom domain later? Build with BASE=/ (e.g. `BASE=/ npm run deploy`).
-const base = process.env.BASE ?? '/hama-new-potfolio/'
+const base = process.env.BASE ?? '/portfolio/'
 
 // https://vite.dev/config/
 export default defineConfig(({ command, isPreview }) => ({
