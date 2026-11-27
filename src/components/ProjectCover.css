@@ -88,3 +88,81 @@
     font-size: 28cqmin;
   }
 }
+
+/* ---------- pipeline flow (projects with `flow`) ---------- */
+.pcover__flowWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4cqmin;
+  min-height: 0;
+}
+
+.pcover__flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.2cqmin 1.6cqmin;
+}
+
+.pcover__flow li {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6cqmin;
+  padding: 1.4cqmin 2.4cqmin 1.4cqmin 1.6cqmin;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgb(11 11 10 / 0.55);
+  font-size: clamp(7px, 3.4cqmin, 14px);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* connector arrow between stages */
+.pcover__flow li:not(.is-last)::after {
+  content: '→';
+  margin-left: 1.6cqmin;
+  margin-right: -0.8cqmin;
+  color: var(--signal);
+  font-family: var(--font-mono);
+}
+
+.pcover__flow li.is-last {
+  border-color: var(--signal);
+  color: var(--paper);
+}
+
+.pcover__n {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  color: var(--paper-mute);
+}
+
+.pcover__result {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(10px, 7cqmin, 38px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--paper);
+}
+
+/* tiny covers: flow → just the result line */
+@container (max-height: 90px) {
+  .pcover__flow {
+    display: none;
+  }
+  .pcover__result {
+    font-size: 22cqmin;
+  }
+}
+
+.pcover__flow.is-plain li::after {
+  content: none;
+}
+
+.pcover__flow.is-plain li.is-last {
+  border-color: var(--line-strong);
+}

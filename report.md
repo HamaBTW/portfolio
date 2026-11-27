@@ -158,3 +158,36 @@ These show the **website**, not the native SwiftUI / Jetpack Compose app, so the
 
 ### Note on bundle size
 The production JavaScript bundle is now **500 KB** minified (162 KB gzipped). Vite warns at 500 KB, and the growth comes from the brand icons added in this pass. It's fine for a portfolio. If it grows further, the first step is to lazy-load the command menu and project panel, which aren't needed on first paint.
+
+---
+
+## 7. Update: the Tache-Lik platform projects (27 Nov 2026)
+
+Source: your master-profile project files (`t-agent-pipeline`, `t-agent-course-builder`, `t-agent-pipeline-editor`, `t-studio`, `t-hub`, `t-backup`). Only facts from those files were used.
+
+**New order: Tache-Lik on top, AI next.**
+
+| Position | Projects |
+|---|---|
+| Featured (sticky cards) | **Tache-Lik** → **T-Agent Pipeline** → **T-Agent Course Builder** → **T-Agent Pipeline Editor** |
+| Top of the list (other AI) | AnOps, ADACTIM CTI |
+| Rest of the Tache-Lik platform | T-Studio, T-Hub, T-Backup, Tâche-Lik Mobile |
+| Everything else | Clubedge Mobile, Farmy Net, Farmy Mini, Loopii, EcoNet, HireUp, Clothify, The World Within, Spotipy |
+
+**The six new projects:**
+| Project | Headline number |
+|---|---|
+| T-Agent Pipeline | 9-agent swarm · course prep **8+ h → 15 min** · 182/183 commits · 908 tests |
+| T-Agent Course Builder | course write-up **1–3 h → under 1 min** · 30–50 s per request · >50% fewer tokens |
+| T-Agent Pipeline Editor | ADR-001 redesign · **≤ 4 model calls per turn** · sha256-fingerprinted approvals |
+| T-Studio | Python → Rust · **1 GB → 60 MB**, 5-min lesson **10–30 min → ~20 s** |
+| T-Hub | Flutter admin app · **~154k lines, 33 modules** · 643/730 commits |
+| T-Backup | N sources → N destinations · in production for months |
+
+**Covers:** none of the six had screenshots, so their covers draw the **real pipeline**: the agent stages in order with arrows, plus the outcome line (e.g. *Watcher → … → Inspector · 8+ h → 15 min per course*). T-Hub's modules are shown without arrows, since they aren't a sequence. Real screenshots can replace any of them later with a `cover:` line.
+
+**Also updated:** the Tache-Lik project now describes the tools around it; stats show **19 projects**; the toolbox gained Rust, Tauri, Mastra, Qdrant, Groq, PostgreSQL, MinIO and FFmpeg; and there are 21 new tech icons.
+
+**Left out on purpose:**
+- T-Backup's implementation language, because your profile says it isn't confirmed.
+- The T-Agent Pipeline's "5–8 h" figure, in favour of the CV's "8+ h → 15 min", as your file suggests. Both are mentioned in its case study.

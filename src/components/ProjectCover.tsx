@@ -41,7 +41,22 @@ export function ProjectCover({
         <span>{p.kind}</span>
         <span>{p.year}</span>
       </div>
-      <div className="pcover__title">{p.title}</div>
+      {p.flow ? (
+        // Pipelines show their real stages instead of repeating the title
+        <div className="pcover__flowWrap">
+          <ol className={`pcover__flow ${p.flowPlain ? 'is-plain' : ''}`} aria-hidden>
+            {p.flow.map((step, i) => (
+              <li key={step} className={i === p.flow!.length - 1 ? 'is-last' : ''}>
+                <span className="pcover__n">{String(i + 1).padStart(2, '0')}</span>
+                <span className="pcover__step">{step}</span>
+              </li>
+            ))}
+          </ol>
+          {p.flowResult && <div className="pcover__result">{p.flowResult}</div>}
+        </div>
+      ) : (
+        <div className="pcover__title">{p.title}</div>
+      )}
       <ul className="pcover__stack" aria-hidden>
         {p.stack.slice(0, 5).map((s) => (
           <li key={s}>
